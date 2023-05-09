@@ -10,7 +10,7 @@
     font-size: 140px;
     line-height: 169px;
     color: #000000;
-    margin: 246px auto 0;
+    margin: 246px auto 6px;
     max-width: 400px;
 }
 
@@ -25,7 +25,7 @@
     font-size: 14px;
     line-height: 17px;
     color: #2BE080;
-    margin: 0 auto;
+    margin: 0 0 0 17px;
     position: relative;
     left: 47%;
     text-decoration: none;
