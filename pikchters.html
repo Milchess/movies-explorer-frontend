@@ -6,10 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Картинки</title>
     <link rel="stylesheet" href="./all.css" />
-    <link rel="stylesheet" href="./pikchters.css" />
+    <link rel="stylesheet" href="./header.css" />
+    <link rel="stylesheet" href="./knopka.css" />
+    <link rel="stylesheet" href="pikchters.css" />
+    <link rel="stylesheet" href="./footer.css" />
 </head>
 <body class="page">
-  <section class="elements">
+    <header class="header">
+        <img class="logo" src="./images/logoS.svg" alt="Логотип сайта">
+        <nav class="nav">
+            <ul class="nav_profile">
+                <li class="nav_text">Фильмы</li>
+                <li class="nav_text">Сохранённые фильмы</li>
+            </ul>
+            <div class="account">
+                <h3 class="account_text">Аккаунт</h3>
+                <img class="account_icon" src="./images/iconProfile.svg" alt="Значок профиля">
+            </div>
+        </nav>
+    </header>
+    <section class="search">
+        <div class="input-group">
+            <input class="input_search"  type="text" placeholder="Фильм">
+            <button class="button-search" type="button">Поиск</button>
+        </div>
+        <div class="switch-box">
+            <label class="switch">
+                <input class="checkbox" type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <p class="switch-text">Короткометражки</p>
+        </div>
+    </section>
+    <section class="line-box"></section>
+    <section class="elements">
         <ul class="grid-cards">
           <li class="grid-card">
             <article class="grid-card__container">
@@ -43,5 +73,16 @@
           </li>
         </ul>
   </section>
+    <section class="empty-box"></section>
+    <footer class="footer">
+        <h2 class="footer_text">Учебный проект Яндекс.Практикум x BeatFilm.</h2>
+        <div class="footer_author">
+            <p class="footer__copyright">&copy; 2023</p>
+            <div class="footer_link">
+                <a href="#" class="footer_link__text">Яндекс.Практикум</a>
+                <a href="#" class="footer_link__text">Github</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

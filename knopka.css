@@ -7,7 +7,7 @@
     width: 90%;
     display: flex;
     align-items: center;
-    height: 72px;
+    height: 68px;
     border: 2px solid rgb(170, 170, 170, .1);
     border-radius: 8px;
     background-color: transparent;
@@ -18,7 +18,7 @@
     height: 72px;
     width: 100%;
     margin: 0;
-    padding: 0 1em;
+    padding: 0 23px;
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -48,8 +48,8 @@
     color: #FFFFFF;
     background: #2BE080;
     border-radius: 5px;
-    margin: 0 10px 0 0;
-    padding: .5em 1em;
+    margin: 0 24px 0 0;
+    padding: 0 28px;
     height: 52px;
     border: none;
     box-sizing: border-box;
@@ -57,6 +57,11 @@
 
 .button-search:hover {
     opacity: .7;
+}
+
+.switch-box {
+    display: flex;
+    margin: 27px 0 0 70px;
 }
 
 .switch {
@@ -68,7 +73,6 @@
     display: inline-block;
     width: calc(var(--circle) * (0.1538 * 2) + var(--circle) * 2);
     height: calc(var(--circle) * (0.1538 * 2) + var(--circle));
-    margin: 20px 0 0 70px;
     box-shadow: 0 4px 4px rgba(50, 50, 71, 0.08), 0 4px 8px rgba(50, 50, 71, 0.06);
     border-radius: 16px;
 }
@@ -107,4 +111,14 @@
     border-radius: 50%;
     -webkit-transition: .4s;
     transition: .4s;
+}
+
+.switch-text {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #000000;
+    margin: 0 0 0 13px;
 }
