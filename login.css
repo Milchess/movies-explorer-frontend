@@ -12,7 +12,7 @@
 }
 
 .title-log {
-    font-family: 'Inter', serif;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
@@ -27,7 +27,7 @@
 }
 
 .form_label {
-    font-family: 'Inter', serif;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 10px;
@@ -37,7 +37,7 @@
 }
 
 .form_input {
-    font-family: 'Inter', serif;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
@@ -50,7 +50,7 @@
 }
 
 .form-error {
-    font-family: 'Inter', serif;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 10px;
@@ -64,7 +64,7 @@
 }
 
 .btn_log-reg {
-    font-family: 'Inter', serif;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -83,7 +83,7 @@
 }
 
 .subtitle_log {
-    font-family: 'Inter', serif;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

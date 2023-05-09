@@ -22,7 +22,7 @@
 }
 
 .form_label {
-    font-family: 'Inter', serif;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 11px;
@@ -36,7 +36,7 @@
 }
 
 .form_input {
-    font-family: 'Inter', serif;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 11px;

@@ -6,7 +6,7 @@
 
 .footer_text {
     border-bottom: 1px solid #E8E8E8;
-    font-family: 'Inter', serif;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
@@ -25,7 +25,7 @@
 }
 
 .footer__copyright {
-    font-family: 'Inter', serif;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
@@ -39,7 +39,7 @@
 
 .footer_link__text {
     text-decoration: none;
-    font-family: 'Inter', serif;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
