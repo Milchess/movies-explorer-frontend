@@ -107,10 +107,10 @@
 .project {
     display: flex;
     flex-direction: column;
-    margin: 110px 70px 0;
+    margin: 0 70px 0;
 }
 
-.project-title {
+.section-title {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -120,7 +120,7 @@
     color: #000000;
     padding-bottom: 23px;
     border-bottom: #000000 solid 1px;
-    margin: 0 0 70px 0;
+    margin: 110px 0 70px 0;
 }
 
 .project-box {
@@ -159,6 +159,7 @@
 .project-time {
     display: flex;
     flex-direction: column;
+    margin-bottom: 120px;
 }
 
 .project-time_line {
@@ -215,4 +216,180 @@
     color: #A0A0A0;
     margin: 14px 0 0 0;
     width: 80%;
+}
+
+.technologies {
+    display: flex;
+    flex-direction: column;
+    padding: 0 70px 0;
+    background-color: #F5F5F5;
+}
+
+.technologies-box_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.technologies-box_title {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: #000000;
+    max-width: 600px;
+    margin: 0 0 26px 0 ;
+}
+
+.technologies-box_subtitle {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: #000000;
+    max-width: 460px;
+    margin: 0;
+}
+
+.technologies-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0 0 100px 0;
+}
+
+.technologies-list_element {
+    background: #E8E8E8;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: #000000;
+    width: 90px;
+    margin-right: 10px;
+    padding: 20px 0;
+}
+
+.portfolio-name {
+    display: flex;
+    flex-direction: column;
+    padding: 0 70px 0;
+    margin-bottom: 110px;
+}
+
+.portfolio {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.portfolio-about {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+.portfolio-about_name {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    letter-spacing: -0.04em;
+    color: #000000;
+    margin: 0 0 18px 0;
+}
+
+.portfolio-about_inform {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    color: #000000;
+    mix-blend-mode: normal;
+    margin: 0 0 26px 0;
+}
+
+.portfolio-about_inform-text {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #000000;
+    mix-blend-mode: normal;
+    margin: 0 0 100px 0;
+}
+
+.link-github {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.portfolio-about_foto {
+    max-width: 270px;
+    max-height: 327px;
+}
+
+.link-portfolio {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    color: #A0A0A0;
+    mix-blend-mode: normal;
+    text-decoration: none;
+    margin-bottom: 100px;
+}
+
+.nav-sait {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-sait_element {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: #E8E8E8 solid 1px;
+    padding-bottom: 19px;
+    margin-bottom: 20px;
+}
+
+.nav-sait_element:last-child {
+    margin-bottom: 0;
+}
+
+.nav-site_text {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: -0.04em;
+    color: #000000;
+    margin: 0;
+}
+
+.nav-site_img {
+    max-width: 29px;
+    max-height: 60px;
 }
