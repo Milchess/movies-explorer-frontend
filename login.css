@@ -56,14 +56,14 @@
     font-size: 10px;
     line-height: 12px;
     color: #EE3465;
-    margin: 10px 0 20px;
+    margin: 10px 0 10px;
 }
 
 .form-error:last-child {
     margin-bottom: 0;
 }
 
-.btn_log {
+.btn_log-reg {
     font-family: 'Inter', serif;
     font-style: normal;
     font-weight: 500;
@@ -75,10 +75,10 @@
     background: #2BE080;
     border: none;
     padding: 13px;
-    margin: 179px 0 16px;
+    margin: 170px 0 16px;
 }
 
-.btn_log:hover {
+.btn_log-reg:hover {
     opacity: .7;
 }
 
@@ -90,6 +90,7 @@
     line-height: 17px;
     text-align: center;
     color: #A0A0A0;
+    margin: 0;
 }
 
 .subtitle_log__link {
