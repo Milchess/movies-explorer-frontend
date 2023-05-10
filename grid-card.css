@@ -93,7 +93,7 @@
     margin: 0 0 16px 16px;
 }
 
-.pikchters-more {
+.box_more {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,7 +101,7 @@
     margin-bottom: 6px;
 }
 
-.btn-more {
+.btn_more {
     background: #F9F9F9;
     border-radius: 6px;
     border: none;
@@ -118,4 +118,9 @@
 
 .empty-box {
     height: 214px;
+}
+
+.hover-style:hover {
+    opacity: .7;
+    cursor: pointer;
 }

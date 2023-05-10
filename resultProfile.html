@@ -2,20 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Профиль</title>
-    <link rel="stylesheet" href="./all.css" />
-    <link rel="stylesheet" href="./header.css" />
-    <link rel="stylesheet" href="./resultProfile.css" />
+    <link rel="stylesheet" href="./page.css"/>
+    <link rel="stylesheet" href="./header.css"/>
+    <link rel="stylesheet" href="./result_profile.css"/>
 </head>
 <body class="page">
     <header class="header">
         <img class="logo" src="./images/logoS.svg" alt="Логотип сайта">
         <nav class="nav">
             <ul class="nav_profile">
-                <li class="nav_text">Фильмы</li>
-                <li class="nav_text">Сохранённые фильмы</li>
+                <li class="nav_text hover-style">Фильмы</li>
+                <li class="nav_text hover-style">Сохранённые фильмы</li>
             </ul>
             <div class="account">
                 <h3 class="account_text">Аккаунт</h3>
@@ -23,17 +24,18 @@
             </div>
         </nav>
     </header>
-    <section class="result-profile">
-        <h1 class="title-name">Привет, Виталий!</h1>
+    <section class="user-profile">
+        <h1 class="title_user">Привет, Ксения!</h1>
         <form class="form">
             <label class="form_label">Имя
-            <input class="form_input" type="text" required placeholder="Виталий"></label>
+                <input class="form_input" type="text" required placeholder="Ксения"></label>
             <label class="form_label">E-mail
-            <input class="form_input" type="email" required placeholder="pochta@yandex.ru"></label>
+                <input class="form_input" type="email" required placeholder="pochta@yandex.ru"></label>
         </form>
-        <div class="btn">
-            <button class="edit_profile" aria-label="Редактировать" type="button">Редактировать</button>
-            <button class="exit_profile" aria-label="Выйти из аккаунта" type="button">Выйти из аккаунта</button>
+        <div class="btn-box_user">
+            <button class="btn_edit-profile hover-style" aria-label="Редактировать" type="button">Редактировать</button>
+            <button class="btn_exit-profile hover-style" aria-label="Выйти из аккаунта" type="button">Выйти из аккаунта
+            </button>
         </div>
     </section>
 </body>

@@ -53,6 +53,7 @@
     margin-right: 0;
 }
 
-.footer_link__text:hover {
+.hover-style:hover {
     opacity: .7;
+    cursor: pointer;
 }

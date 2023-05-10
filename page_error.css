@@ -1,4 +1,4 @@
-.page-404 {
+.page_error__style {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -6,7 +6,7 @@
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.title-404 {
+.title_error {
     font-size: 140px;
     line-height: 169px;
     color: #000000;
@@ -14,14 +14,14 @@
     max-width: 400px;
 }
 
-.subtitle-404 {
+.subtitle_error {
     font-size: 16px;
     line-height: 19px;
     color: #000000;
     margin: 0 auto 184px;
 }
 
-.link-back {
+.link_back {
     font-size: 14px;
     line-height: 17px;
     color: #2BE080;
@@ -31,6 +31,7 @@
     text-decoration: none;
 }
 
-.link-back:hover {
+.hover-style:hover {
     opacity: .7;
+    cursor: pointer;
 }
