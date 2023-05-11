@@ -4,7 +4,7 @@
     align-items: center;
 }
 
-.title_user {
+.user-profile__title {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -21,7 +21,7 @@
     margin-top: 106px;
 }
 
-.form_label {
+.form__label {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -31,11 +31,11 @@
     border-bottom: 1px solid #E8E8E8;
 }
 
-.form_label:last-child {
+.form__label:last-child {
     border-bottom: none;
 }
 
-.form_input {
+.form__input {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -47,18 +47,18 @@
     padding: 18px 0 14px 224px;
 }
 
-.form_input::placeholder {
+.form__input::placeholder {
     color: #000000;
 }
 
-.btn-box_user {
+.user-profile__btn-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 207px auto 70px;
 }
 
-.btn_edit-profile {
+.user-profile__edit {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -71,7 +71,7 @@
     background-color: #FFFFFF;
 }
 
-.btn_exit-profile {
+.user-profile__exit {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;

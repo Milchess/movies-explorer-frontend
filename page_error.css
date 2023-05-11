@@ -1,4 +1,4 @@
-.page_error__style {
+.page__error-style {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -6,7 +6,7 @@
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.title_error {
+.page-error__title {
     font-size: 140px;
     line-height: 169px;
     color: #000000;
@@ -14,14 +14,14 @@
     max-width: 400px;
 }
 
-.subtitle_error {
+.page-error__subtitle {
     font-size: 16px;
     line-height: 19px;
     color: #000000;
     margin: 0 auto 184px;
 }
 
-.link_back {
+.page-error__link-back {
     font-size: 14px;
     line-height: 17px;
     color: #2BE080;

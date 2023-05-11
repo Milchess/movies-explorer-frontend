@@ -93,7 +93,7 @@
     margin: 0 0 16px 16px;
 }
 
-.box_more {
+.box-more {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,7 +101,7 @@
     margin-bottom: 6px;
 }
 
-.btn_more {
+.btn-more {
     background: #F9F9F9;
     border-radius: 6px;
     border: none;

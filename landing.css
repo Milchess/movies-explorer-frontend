@@ -69,7 +69,7 @@
     max-width: 730px;
 }
 
-.lending-nav {
+.landing-nav {
     display: flex;
     justify-content: center;
     background: #F5F5F5;
@@ -77,7 +77,7 @@
     gap: 40px
 }
 
-.landing-nav_text {
+.landing-nav__text {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -88,7 +88,7 @@
     margin: 29px 0 0 0;
 }
 
-.landing-nav_text:last-child {
+.landing-nav__text:last-child {
     margin-right: 0;
 }
 
@@ -115,17 +115,17 @@
     display: flex;
 }
 
-.project-box_text {
+.project-box__text {
     display: flex;
     flex-direction: column;
     margin: 0 0 110px 40px;
 }
 
-.project-box_text:first-child {
+.project-box__text:first-child {
     margin-left: 0;
 }
 
-.project-box_title {
+.project-box__title {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -137,7 +137,7 @@
     max-width: 550px;
 }
 
-.project-box_subtitle {
+.project-box__subtitle {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -154,11 +154,11 @@
     margin-bottom: 120px;
 }
 
-.project-time_line {
+.project-time__line {
     display: flex;
 }
 
-.project-time_line-back {
+.project-time__line-back {
     background: #2BE080;
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -172,7 +172,7 @@
     width: 20%;
 }
 
-.project-time_line-front {
+.project-time__line-front {
     background: #F2F2F2;
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -186,7 +186,7 @@
     width: 80%;
 }
 
-.project-time_line-text-back {
+.project-time__line-text-back {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -198,7 +198,7 @@
     width: 20%;
 }
 
-.project-time_line-text-front {
+.project-time__line-text-front {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -230,14 +230,14 @@
     margin: 100px 0 70px 0;
 }
 
-.technologies-box_text {
+.technologies-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px 0 100px 0;
 }
 
-.technologies-box_title {
+.technologies-box__title {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -250,7 +250,7 @@
     margin: 0 0 26px 0;
 }
 
-.technologies-box_subtitle {
+.technologies-box__subtitle {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -272,7 +272,7 @@
     gap: 10px
 }
 
-.technologies-list_element {
+.technologies-list__element {
     background: #E8E8E8;
     border-radius: 10px;
     font-family: 'Inter', sans-serif;
@@ -294,7 +294,7 @@
     margin-bottom: 110px;
 }
 
-.portfolio-name-title {
+.portfolio-name__title {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -319,7 +319,7 @@
     max-width: 600px;
 }
 
-.portfolio-about_name {
+.portfolio-about__name {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -330,7 +330,7 @@
     margin: 0 0 18px 0;
 }
 
-.portfolio-about_inform {
+.portfolio-about__inform {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -341,7 +341,7 @@
     margin: 0 0 26px 0;
 }
 
-.portfolio-about_inform-text {
+.portfolio-about__inform-text {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -363,7 +363,7 @@
     margin-top: 120px;
 }
 
-.portfolio-about_foto {
+.portfolio__foto {
     max-width: 270px;
     max-height: 327px;
 }
@@ -380,12 +380,12 @@
     margin-bottom: 50px;
 }
 
-.nav-sait {
+.nav-site {
     display: flex;
     flex-direction: column;
 }
 
-.nav-sait_element {
+.nav-site__element {
     display: flex;
     justify-content: space-between;
     border-bottom: #E8E8E8 solid 1px;
@@ -393,11 +393,11 @@
     margin-bottom: 20px;
 }
 
-.nav-sait_element:last-child {
+.nav-site__element:last-child {
     margin-bottom: 0;
 }
 
-.nav-site_text {
+.nav-site__text {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -408,7 +408,7 @@
     margin: 0;
 }
 
-.nav-site_img {
+.nav-site__img {
     max-width: 29px;
     max-height: 60px;
     padding: 6px;

@@ -4,7 +4,7 @@
     background: #FAFAFA;
 }
 
-.footer_text {
+.footer__text {
     border-bottom: 1px solid #E8E8E8;
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -17,7 +17,7 @@
     padding-bottom: 20px;
 }
 
-.footer_author {
+.footer__author {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -33,11 +33,11 @@
     color: #000000;
 }
 
-.footer_link {
+.footer__link {
     display: flex;
 }
 
-.footer_link__text {
+.footer__link-text {
     text-decoration: none;
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -49,7 +49,7 @@
     margin-right: 20px;
 }
 
-.footer_link__text:last-child {
+.footer__link-text:last-child {
     margin-right: 0;
 }
 

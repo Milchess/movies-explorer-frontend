@@ -13,7 +13,7 @@
     margin: 70px 0 0 70px;
 }
 
-.input_search {
+.input-search {
     height: 72px;
     width: 100%;
     margin: 0;
@@ -27,7 +27,7 @@
     border: none;
 }
 
-.input_search::placeholder {
+.input-search::placeholder {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -37,7 +37,7 @@
     opacity: .5;
 }
 
-.button_search {
+.button-search {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;

@@ -16,14 +16,14 @@
     align-items: center;
 }
 
-.nav_profile {
+.nav__profile {
     display: flex;
     padding: 0;
     list-style: none;
     margin-right: 50px;
 }
 
-.nav_text {
+.nav__text {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -34,7 +34,7 @@
     margin-right: 23px;
 }
 
-.nav_text:last-child {
+.nav__text:last-child {
     margin-right: 0;
 }
 
@@ -49,7 +49,7 @@
     max-height: 32px;
 }
 
-.account_text {
+.account__text {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -59,7 +59,7 @@
     margin-right: 7px;
 }
 
-.account_icon {
+.account__icon {
     background: #F9F9F9;
     border-radius: 50px;
     padding: 5px;
