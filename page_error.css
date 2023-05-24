@@ -1,3 +1,8 @@
+.page-error {
+    display: flex;
+    flex-direction: column;
+}
+
 .page__error-style {
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -14,6 +19,21 @@
     max-width: 400px;
 }
 
+@media screen and (max-width: 768px) {
+    .page-error__title {
+        margin-top: 408px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .page-error__title {
+        font-size: 80px;
+        line-height: 97px;
+        margin-top: 329px;
+        margin-bottom: 10px;
+    }
+}
+
 .page-error__subtitle {
     font-size: 16px;
     line-height: 19px;
@@ -21,14 +41,27 @@
     margin: 0 auto 184px;
 }
 
+@media screen and (max-width: 420px) {
+    .page-error__subtitle {
+        font-size: 12px;
+        line-height: 15px;
+        margin-bottom: 284px;
+    }
+}
+
 .page-error__link-back {
     font-size: 14px;
     line-height: 17px;
     color: #2BE080;
-    margin: 0 0 0 17px;
-    position: relative;
-    left: 47%;
+    margin: 0;
     text-decoration: none;
+}
+
+@media screen and (max-width: 420px) {
+    .page-error__link-back {
+        font-size: 12px;
+        line-height: 15px;
+    }
 }
 
 .hover-style:hover {

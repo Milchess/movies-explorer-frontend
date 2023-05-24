@@ -6,9 +6,32 @@
     margin: 0 auto;
 }
 
+@media screen and (max-width: 768px) {
+    .line-box {
+        visibility: hidden;
+        height: 0;
+        padding: 0;
+        border: none;
+    }
+}
+
 .elements {
-    max-width: 1140px;
-    margin: 85px 0 37px 71px;
+    max-width: 90%;
+    margin: 85px auto 71px;
+}
+
+@media screen and (min-width: 768px) {
+    .elements {
+        max-width: 709px;
+        margin-top: 80px;
+    }
+}
+
+@media screen and (min-width: 320px) {
+    .elements {
+        margin-top: 50px;
+        max-width: 94%;
+    }
 }
 
 .grid-cards {
@@ -19,6 +42,20 @@
     list-style: none;
     padding-left: 0;
     margin: 16px 0 0 0;
+}
+
+@media screen and (max-width: 815px) {
+    .grid-cards {
+        grid-template-columns: repeat(auto-fill, minmax(221px, 1fr));
+        gap: 30px 30px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .grid-cards {
+        grid-template-columns: repeat(1, 300px);
+        gap: 17px;
+    }
 }
 
 .grid-card {
@@ -36,7 +73,7 @@
 
 .grid-card__image {
     width: 100%;
-    height: 203px;
+    height: 100%;
     object-fit: cover;
     border-radius: 6px;
 }
@@ -48,6 +85,13 @@
     padding: 16px 25px 16px 16px;
 }
 
+@media screen and (max-width: 320px) {
+    .grid-card__item {
+        padding-right: 17px;
+        padding-bottom: 12px;
+    }
+}
+
 .grid-card__title {
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -57,6 +101,13 @@
     color: #000000;
     max-width: 290px;
     margin: 0;
+}
+
+@media screen and (max-width: 320px) {
+    .grid-card__title {
+        font-size: 12px;
+        line-height: 15px;
+    }
 }
 
 .grid-card__like {
@@ -83,6 +134,13 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 320px) {
+    .grid-card__delete {
+        width: 12px;
+        height: 9px;
+    }
+}
+
 .grid-card__time {
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -93,12 +151,32 @@
     margin: 0 0 16px 16px;
 }
 
+@media screen and (max-width: 815px) {
+    .grid-card__time {
+        margin-bottom: 12px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .grid-card__time {
+        font-size: 10px;
+        line-height: 12px;
+    }
+}
+
 .box-more {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 180px;
     margin-bottom: 6px;
+}
+
+@media screen and (max-width: 815px) {
+    .box-more {
+        height: 68px;
+        margin-bottom: 97px;
+    }
 }
 
 .btn-more {
@@ -116,8 +194,20 @@
     margin: 5px 0 20px 0;
 }
 
+@media screen and (max-width: 320px) {
+    .btn-more {
+        padding: 11px 107px;
+    }
+}
+
 .empty-box {
     height: 214px;
+}
+
+@media screen and (max-width: 768px) {
+    .empty-box {
+        height: 139px;
+    }
 }
 
 .hover-style:hover {
