@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import landingImg from '../images/landing-logo.svg';
 import photoStudent from '../images/photoStudent.png';
 import pointer from '../images/pointer.svg';
 
+
 function Main() {
+    const project = useRef(null);
+    const technologies = useRef(null);
+    const student = useRef(null);
+
+    function handleScrollToMain(e) {
+        e.current.scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+
     return (
         <div className="page">
             <div className="landing-main">
@@ -12,11 +23,11 @@ function Main() {
                 <h1 className="landing-title">Учебный проект студента факультета Веб-разработки.</h1>
             </div>
             <div className="landing-nav">
-                <Link href="#" className="landing-nav__text hover-style">О проекте</Link>
-                <Link href="#" className="landing-nav__text hover-style">Технологии</Link>
-                <Link href="#" className="landing-nav__text hover-style">Студент</Link>
+                <button onClick={() => handleScrollToMain(project)} className="landing-nav__text hover-style">О проекте</button>
+                <button onClick={() => handleScrollToMain(technologies)} className="landing-nav__text hover-style">Технологии</button>
+                <button onClick={() => handleScrollToMain(student)} className="landing-nav__text hover-style">Студент</button>
             </div>
-            <div className="section-landing">
+            <div ref={project} className="section-landing">
                 <h2 className="title">О проекте</h2>
                 <div className="project-box">
                     <div className="project-box__text">
@@ -44,7 +55,7 @@ function Main() {
                     </div>
                 </div>
             </div>
-            <div className="section-landing section-landing_grey">
+            <div ref={technologies} className="section-landing section-landing_grey">
                 <h2 className="title">Технологии</h2>
                 <div className="technologies-box">
                     <p className="technologies-box__title">7 технологий</p>
@@ -62,7 +73,7 @@ function Main() {
                     <li className="technologies-list__element">mongoDB</li>
                 </ul>
             </div>
-            <div className="section-landing">
+            <div ref={student} className="section-landing">
                 <h2 className="title">Студент</h2>
                 <div className="portfolio">
                     <div className="portfolio-about">
