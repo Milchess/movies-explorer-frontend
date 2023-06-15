@@ -1,0 +1,11 @@
+.nav-site__element {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: #E8E8E8 solid 1px;
+    padding-bottom: 19px;
+    margin-bottom: 20px;
+}
+
+.nav-site__element:last-child {
+    margin-bottom: 0;
+}

@@ -1,0 +1,11 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    background: #FAFAFA;
+}
+
+@media screen and (max-width: 320px) {
+    .footer {
+        background: #FFFFFF;
+    }
+}

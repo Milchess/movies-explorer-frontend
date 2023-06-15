@@ -1,0 +1,19 @@
+.landing-nav {
+    display: flex;
+    justify-content: center;
+    background: #F5F5F5;
+    height: 61px;
+    gap: 40px
+}
+
+@media screen and (max-width: 768px) {
+    .landing-nav {
+        height: 66px;
+    }
+}
+
+@media screen and (max-width: 455px) {
+    .landing-nav {
+        gap: 23px;
+    }
+}

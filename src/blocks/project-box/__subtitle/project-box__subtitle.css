@@ -1,0 +1,25 @@
+.project-box__subtitle {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    margin: 0;
+    max-width: 550px;
+}
+
+@media screen and (max-width: 768px) {
+    .project-box__subtitle {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+@media screen and (max-width: 455px) {
+    .project-box__subtitle {
+        font-size: 11px;
+        line-height: 16px;
+        margin-bottom: 57px;
+    }
+}

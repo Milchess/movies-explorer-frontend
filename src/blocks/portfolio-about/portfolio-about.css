@@ -1,0 +1,11 @@
+.portfolio-about {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+@media screen and (max-width: 455px) {
+    .portfolio-about {
+        margin-top: 40px;
+    }
+}

@@ -1,0 +1,18 @@
+.portfolio {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .portfolio {
+        margin-bottom: 91px;
+    }
+}
+
+@media screen and (max-width: 455px) {
+    .portfolio {
+        display: grid;
+        margin-bottom: 70px;
+    }
+}

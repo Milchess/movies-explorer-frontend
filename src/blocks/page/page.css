@@ -1,6 +1,3 @@
-@import url('./vendor/normalize.css');
-@import url('./vendor/fonts/fonts.css');
-
 .page {
     max-width: 1280px;
     min-height: 100vh;
