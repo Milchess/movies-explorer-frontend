@@ -5,6 +5,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
 import ErrorPage from './Error';
+import Main from './Main';
 
 export default function App() {
     return (
@@ -20,6 +21,7 @@ export default function App() {
 
                 <Route exact path='/'>
                     <Header />
+                    <Main></Main>
                     <Footer />
                 </Route>
 

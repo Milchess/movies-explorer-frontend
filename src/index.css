@@ -40,7 +40,7 @@
 @import url('./blocks/technologies-list/__element/technologies-list__element.css');
 
 @import url('./blocks/portfolio/portfolio.css');
-@import url('./blocks/portfolio/__foto/portfolio__foto.css');
+@import url('./blocks/portfolio/__photo/portfolio__photo.css');
 @import url('./blocks/portfolio-about/portfolio-about.css');
 @import url('./blocks/portfolio-about/__name/portfolio-about__name.css');
 @import url('./blocks/portfolio-about/__inform/portfolio-about__inform.css');

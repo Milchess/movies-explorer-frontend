@@ -1,4 +1,4 @@
-.portfolio__foto {
+.portfolio__photo {
     max-width: 270px;
     max-height: 327px;
     overflow: hidden;
@@ -7,13 +7,13 @@
 }
 
 @media screen and (max-width: 768px) {
-    .portfolio__foto {
+    .portfolio__photo {
         max-height: 306px;
     }
 }
 
 @media screen and (max-width: 455px) {
-    .portfolio__foto {
+    .portfolio__photo {
         max-width: 292px;
         max-height: 352px;
         width: 100%;
