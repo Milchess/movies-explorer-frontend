@@ -1,0 +1,20 @@
+.btn-more {
+    background: #F9F9F9;
+    border-radius: 6px;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #000000;
+    padding: 11px 148px;
+    margin: 5px 0 20px 0;
+}
+
+@media screen and (max-width: 320px) {
+    .btn-more {
+        padding: 11px 107px;
+    }
+}

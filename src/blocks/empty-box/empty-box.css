@@ -1,0 +1,9 @@
+.empty-box {
+    height: 214px;
+}
+
+@media screen and (max-width: 768px) {
+    .empty-box {
+        height: 139px;
+    }
+}

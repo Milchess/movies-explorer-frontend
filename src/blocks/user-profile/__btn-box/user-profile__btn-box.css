@@ -1,0 +1,19 @@
+.user-profile__btn-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 207px auto 70px;
+}
+
+@media screen and (max-width: 768px) {
+    .user-profile__btn-box {
+        margin-top: 191px;
+    }
+}
+
+@media screen and (max-width: 465px) {
+    .user-profile__btn-box {
+        margin-top: 371px;
+        margin-bottom: 0;
+    }
+}

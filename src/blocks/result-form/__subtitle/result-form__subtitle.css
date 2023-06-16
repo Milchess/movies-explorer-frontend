@@ -1,0 +1,17 @@
+.result-form__subtitle {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #A0A0A0;
+    margin: 0;
+}
+
+@media screen and (max-width: 440px) {
+    .result-form__subtitle {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}

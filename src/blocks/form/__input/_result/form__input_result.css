@@ -1,0 +1,25 @@
+.form__input_result {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: right;
+    padding: 18px 0 14px 224px;
+    border-radius: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .form__input_result {
+        padding: 16px 0 18px 224px;
+    }
+}
+
+@media screen and (max-width: 465px) {
+    .form__input_result {
+        padding: 0 0 0 70px;
+        height: 30px;
+    }
+}
+
+.form__input_result::placeholder {
+    color: #000000;
+}

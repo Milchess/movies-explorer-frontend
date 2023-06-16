@@ -1,0 +1,23 @@
+.switch-box {
+    display: flex;
+    margin: 27px 0 0 70px;
+}
+
+@media screen and (max-width: 771px) {
+    .switch-box {
+        margin-left: 30px;
+        margin-top: 21px;
+        border-bottom: 1px solid rgba(170, 170, 170, .2);
+        padding-bottom: 51px;
+        max-width: 708px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .switch-box {
+        margin-left: 14px;
+        margin-top: 32px;
+        padding-bottom: 62px;
+        max-width: 288px;
+    }
+}

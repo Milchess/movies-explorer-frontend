@@ -1,0 +1,16 @@
+.switch-text {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #000000;
+    margin: 0 0 0 13px;
+}
+
+@media screen and (max-width: 320px) {
+    .switch-text {
+        font-size: 11px;
+        line-height: 18px;
+    }
+}

@@ -1,0 +1,16 @@
+.form__result {
+    margin-top: 106px;
+}
+
+@media screen and (max-width: 768px) {
+    .form__result {
+        margin-top: 81px;
+    }
+}
+
+@media screen and (max-width: 465px) {
+    .form__result {
+        max-width: 260px;
+        margin-top: 72px;
+    }
+}

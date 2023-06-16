@@ -1,0 +1,14 @@
+.box-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    margin-bottom: 6px;
+}
+
+@media screen and (max-width: 815px) {
+    .box-more {
+        height: 68px;
+        margin-bottom: 97px;
+    }
+}

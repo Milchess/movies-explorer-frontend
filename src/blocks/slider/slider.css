@@ -1,0 +1,23 @@
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--disabled-color);
+    border-radius: calc(var(--circle) * (0.1538 * 2) + var(--circle));
+    cursor: pointer;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: var(--circle);
+    width: var(--circle);
+    left: calc(var(--circle) * 0.1538);
+    bottom: calc(var(--circle) * 0.1538);
+    background-color: #2BE080;
+    border-radius: 50%;
+    transition: .4s;
+}

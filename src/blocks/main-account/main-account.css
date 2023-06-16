@@ -1,0 +1,18 @@
+.main-account {
+    background: #FFFFFF;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, .08);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    max-width: 100px;
+    max-height: 32px;
+    margin-right: 218px;
+    margin-top: 599px;
+}
+
+@media screen and (max-width: 370px) {
+    .main-account {
+        margin-top: 422px;
+        margin-right: 118px;
+    }
+}

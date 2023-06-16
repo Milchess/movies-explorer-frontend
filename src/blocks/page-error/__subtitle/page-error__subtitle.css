@@ -1,0 +1,14 @@
+.page-error__subtitle {
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    margin: 0 auto 184px;
+}
+
+@media screen and (max-width: 420px) {
+    .page-error__subtitle {
+        font-size: 12px;
+        line-height: 15px;
+        margin-bottom: 284px;
+    }
+}

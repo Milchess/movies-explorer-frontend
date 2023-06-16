@@ -1,0 +1,10 @@
+.main-account__text {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 12px;
+    color: #000000;
+    padding-right: 8px;
+    padding-left: 10px;
+}

@@ -1,0 +1,17 @@
+.grid-card__title {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #000000;
+    max-width: 290px;
+    margin: 0;
+}
+
+@media screen and (max-width: 320px) {
+    .grid-card__title {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
