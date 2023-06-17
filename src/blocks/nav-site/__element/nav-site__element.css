@@ -8,4 +8,5 @@
 
 .nav-site__element:last-child {
     margin-bottom: 0;
+    border-bottom: none;
 }

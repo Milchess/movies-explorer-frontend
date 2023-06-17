@@ -1,5 +1,6 @@
 .project-box {
     display: flex;
+    margin-top: 71px;
 }
 
 @media screen and (max-width: 455px) {
