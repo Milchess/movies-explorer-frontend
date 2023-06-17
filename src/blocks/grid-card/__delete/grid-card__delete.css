@@ -1,5 +1,5 @@
 .grid-card__delete {
-    background-image: url('src/images/iconDelete.svg');
+    background-image: url('../../../images/iconDelete.svg');
     background-repeat: no-repeat;
     background-color: transparent;
     object-fit: cover;

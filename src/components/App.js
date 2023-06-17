@@ -1,4 +1,4 @@
-import Header from './Header';
+import HeaderMain from './HeaderMain';
 import Footer from './Footer';
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
@@ -6,6 +6,8 @@ import Login from './Login';
 import Register from './Register';
 import ErrorPage from './Error';
 import Main from './Main';
+import Header from './Header';
+import Card from './Card';
 
 export default function App() {
     return (
@@ -20,8 +22,16 @@ export default function App() {
                 </Route>
 
                 <Route exact path='/'>
-                    <Header />
+                    <HeaderMain />
                     <Main></Main>
+                    <Footer />
+                </Route>
+
+                <Route path='/films'>
+                    <Header />
+                    <Card
+                        isSavedFilms={true}
+                    />
                     <Footer />
                 </Route>
 
