@@ -16,6 +16,7 @@
 @media screen and (max-width: 768px) {
     .result-form__btn {
         margin-top: 0;
+        padding: 15px;
     }
 }
 
@@ -23,6 +24,7 @@
     .result-form__btn {
         font-size: 12px;
         line-height: 15px;
-        margin-top: 88px;
+        margin-top: 87px;
+        margin-bottom: 14px;
     }
 }

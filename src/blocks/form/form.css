@@ -3,9 +3,3 @@
     flex-direction: column;
     height: 336px;
 }
-
-@media screen and (max-width: 768px) {
-    .form {
-        min-height: 337px;
-    }
-}

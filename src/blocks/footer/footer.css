@@ -5,6 +5,12 @@
     height: 169px;
 }
 
+@media screen and (max-width: 768px) {
+    .footer {
+       height: 131px;
+    }
+}
+
 @media screen and (max-width: 320px) {
     .footer {
         background: #FFFFFF;

@@ -7,13 +7,14 @@
 
 @media screen and (max-width: 768px) {
     .user-profile__btn-box {
-        margin-top: 191px;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }
 
 @media screen and (max-width: 465px) {
     .user-profile__btn-box {
-        margin-top: 371px;
+        margin-top: 161px;
         margin-bottom: 0;
     }
 }

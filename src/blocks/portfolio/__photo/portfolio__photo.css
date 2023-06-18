@@ -12,7 +12,7 @@
     }
 }
 
-@media screen and (max-width: 455px) {
+@media screen and (max-width: 519px) {
     .portfolio__photo {
         max-width: 292px;
         max-height: 352px;

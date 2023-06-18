@@ -6,5 +6,6 @@
 @media screen and (max-width: 455px) {
     .project-box {
         flex-direction: column;
+        margin-top: 61px;
     }
 }

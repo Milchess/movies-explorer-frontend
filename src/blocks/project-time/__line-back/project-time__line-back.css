@@ -12,6 +12,12 @@
     width: 20%;
 }
 
+@media screen and (max-width: 768px) {
+    .project-time__line-back {
+        width: 21%;
+    }
+}
+
 @media screen and (max-width: 455px) {
     .project-time__line-back {
         font-size: 11px;

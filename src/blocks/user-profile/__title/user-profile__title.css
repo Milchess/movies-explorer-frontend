@@ -9,8 +9,16 @@
     margin: 74px auto 0;
 }
 
+@media screen and (max-width: 768px) {
+    .user-profile__title {
+        margin-top: 74px;
+        margin-bottom: 80px;
+    }
+}
+
 @media screen and (max-width: 320px) {
     .user-profile__title {
         margin-top: 70px;
+        margin-bottom: 0;
     }
 }
