@@ -1,0 +1,7 @@
+.line-box {
+    border-bottom: #AAAAAA solid 1px;
+    opacity: 0.2;
+    max-width: 1140px;
+    padding: 19px;
+    margin: 0 auto;
+}

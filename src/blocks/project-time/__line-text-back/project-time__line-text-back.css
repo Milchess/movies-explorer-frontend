@@ -1,0 +1,26 @@
+.project-time__line-text-back {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #A0A0A0;
+    margin: 14px 0 0 0;
+    width: 20%;
+}
+
+@media screen and (max-width: 768px) {
+    .project-time__line-text-back {
+        width: 21%;
+    }
+}
+
+@media screen and (max-width: 455px) {
+    .project-time__line-text-back {
+        font-size: 11px;
+        line-height: 13px;
+        margin-top: 4px;
+        margin-left: 25px;
+    }
+}

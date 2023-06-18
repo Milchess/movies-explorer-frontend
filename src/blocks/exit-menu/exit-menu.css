@@ -1,0 +1,13 @@
+.exit-menu {
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 22px;
+}
+
+@media screen and (max-width: 370px) {
+    .exit-menu {
+        margin-top: 13px;
+    }
+}

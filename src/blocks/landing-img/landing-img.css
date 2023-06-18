@@ -1,0 +1,30 @@
+.landing-img {
+    position: absolute;
+    top: 16%;
+    left: 37%;
+}
+
+@media screen and (max-width: 768px) {
+    .landing-img {
+        top: 28%;
+        left: 29%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .landing-img {
+        width: 248px;
+        height: 248px;
+        top: 16%;
+        left: 22%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .landing-img {
+        width: 248px;
+        height: 248px;
+        top: 25%;
+        left: 11%;
+    }
+}

@@ -1,0 +1,22 @@
+.link-github {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    text-decoration: none;
+    margin-top: 120px;
+}
+
+@media screen and (max-width: 768px) {
+    .link-github {
+        margin-top: 123px;
+    }
+}
+
+@media screen and (max-width: 455px) {
+    .link-github {
+        margin-top: 72px;
+    }
+}

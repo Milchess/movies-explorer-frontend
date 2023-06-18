@@ -1,0 +1,29 @@
+.landing-nav__text {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    text-decoration-line: underline;
+    color: #000000;
+    margin: 14px 0 0 0;
+    border: none;
+    background: #F5F5F5;
+    padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .landing-nav__text {
+        margin-top: 2px;
+    }
+}
+
+@media screen and (max-width: 455px) {
+    .landing-nav__text {
+        font-size: 11px;
+    }
+}
+
+.landing-nav__text:last-child {
+    margin-right: 0;
+}

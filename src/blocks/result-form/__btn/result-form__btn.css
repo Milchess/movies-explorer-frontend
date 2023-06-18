@@ -1,0 +1,30 @@
+.result-form__btn {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 3px;
+    background: #2BE080;
+    border: none;
+    padding: 13px;
+    margin: 0 0 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .result-form__btn {
+        margin-top: 0;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .result-form__btn {
+        font-size: 12px;
+        line-height: 15px;
+        margin-top: 87px;
+        margin-bottom: 14px;
+    }
+}

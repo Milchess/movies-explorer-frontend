@@ -1,0 +1,22 @@
+.form__label_result {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    color: #000000;
+    border-bottom: 1px solid #E8E8E8;
+    margin-bottom: 2px;
+}
+
+.form__label_result:last-child {
+    border-bottom: none;
+}
+
+@media screen and (max-width: 465px) {
+    .form__label_result:first-child {
+        padding: 0 0 8px 0;
+    }
+
+    .form__label_result:last-child {
+        padding: 8px 0 0 0;
+    }
+}

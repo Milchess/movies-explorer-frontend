@@ -1,0 +1,19 @@
+.result-form {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    .result-form {
+        margin-top: 230px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .result-form {
+        max-width: 260px;
+        margin-top: 56px;
+    }
+}

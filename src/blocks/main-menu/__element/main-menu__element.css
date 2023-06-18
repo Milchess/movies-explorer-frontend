@@ -1,0 +1,16 @@
+.main-menu__element {
+    max-width: 610px;
+    margin-bottom: 23px;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #FFFFFF;
+}
+
+.main-menu__element:last-child {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 370px) {
+    .main-menu__element {
+        margin-bottom: 19px;
+    }
+}

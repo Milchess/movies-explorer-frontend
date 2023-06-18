@@ -1,0 +1,12 @@
+.exit-menu__btn {
+    border: none;
+    padding: 0;
+    background: #FFFFFF;
+    margin-right: 22px;
+}
+
+@media screen and (max-width: 370px) {
+    .exit-menu__btn {
+        margin-right: 13px;
+    }
+}
