@@ -17,7 +17,7 @@ function Login() {
                 </form>
                 <button className="result-form__btn hover-style" aria-label="Войти" type="button">Войти</button>
                 <p className="result-form__subtitle">Ещё не зарегистрированы?
-                    <Link href="#" className="result-form__subtitle-link hover-style">Регистрация</Link>
+                    <Link to='/signup' className="result-form__subtitle-link hover-style">Регистрация</Link>
                 </p>
         </div>
     );

@@ -22,7 +22,7 @@ function Register() {
                         type="button">Зарегистрироваться
                 </button>
                 <p className="result-form__subtitle">Уже зарегистрированы?
-                    <Link href="#" className="result-form__subtitle-link hover-style">Войти</Link>
+                    <Link to='/signin' className="result-form__subtitle-link hover-style">Войти</Link>
                 </p>
         </div>
     );

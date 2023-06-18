@@ -8,6 +8,7 @@ import ErrorPage from './Error';
 import Main from './Main';
 import Header from './Header';
 import Card from './Card';
+import Profile from './Profile';
 
 export default function App() {
     return (
@@ -33,6 +34,11 @@ export default function App() {
                         isSavedFilms={true}
                     />
                     <Footer />
+                </Route>
+
+                <Route path='/profile'>
+                    <Header />
+                    <Profile />
                 </Route>
 
                 <Route>
