@@ -4,3 +4,11 @@
     list-style: none;
     margin-right: 50px;
 }
+
+@media screen and (max-width: 768px) {
+    .nav__profile {
+        visibility: hidden;
+        width: 0;
+        margin: 0;
+    }
+}
