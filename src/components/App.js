@@ -1,34 +1,34 @@
-import HeaderMain from './HeaderMain';
-import Footer from './Footer';
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
+import HeaderMain from './HeaderMain';
+import Header from './Header';
+import Footer from './Footer';
 import Login from './Login';
 import Register from './Register';
 import ErrorPage from './Error';
 import Main from './Main';
-import Header from './Header';
 import Card from './Card';
 import Profile from './Profile';
 
 export default function App() {
     return (
-        <div className="page">
+        <div className='page'>
             <Switch>
-                <Route path="/signin">
+                <Route path='/signin'>
                     <Login/>
                 </Route>
 
-                <Route path="/signup">
+                <Route path='/signup'>
                     <Register/>
                 </Route>
 
-                <Route exact path="/">
+                <Route exact path='/'>
                     <HeaderMain/>
                     <Main/>
                     <Footer/>
                 </Route>
 
-                <Route path="/films">
+                <Route path='/films'>
                     <Header/>
                     <Card
                         isSavedFilms={true}
@@ -36,7 +36,7 @@ export default function App() {
                     <Footer/>
                 </Route>
 
-                <Route path="/profile">
+                <Route path='/profile'>
                     <Header/>
                     <Profile/>
                 </Route>
@@ -45,8 +45,8 @@ export default function App() {
                     <ErrorPage/>
                 </Route>
 
-                <Route path="">
-                    <Redirect to="/"/>
+                <Route path=''>
+                    <Redirect to='/'/>
                 </Route>
             </Switch>
 

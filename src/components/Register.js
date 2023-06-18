@@ -9,13 +9,13 @@ function Register() {
             <h1 className="result-form__title">Добро пожаловать!</h1>
             <form className="form">
                 <label className="form__label">Имя</label>
-                <input className="form__input" type="text" required/>
+                <input className="form__input" type="text" required minLength={2} maxLength={30}/>
                 <span className="form__error"></span>
                 <label className="form__label">E-mail</label>
-                <input className="form__input" type="email" required/>
+                <input className="form__input" type="email" required minLength={2} maxLength={30}/>
                 <span className="form__error"></span>
                 <label className="form__label">Пароль</label>
-                <input className="form__input" type="password" required/>
+                <input className="form__input" type="password" required minLength={2} maxLength={30}/>
                 <span className="form__error">Что-то пошло не так...</span>
             </form>
             <button className="result-form__btn hover-style" aria-label="Зарегистрироваться"
