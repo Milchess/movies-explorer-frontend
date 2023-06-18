@@ -1,6 +1,7 @@
 .form {
     display: flex;
     flex-direction: column;
+    height: 336px;
 }
 
 @media screen and (max-width: 768px) {

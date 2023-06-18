@@ -1,5 +1,6 @@
 .form__result {
     margin-top: 106px;
+    height: 298px;
 }
 
 @media screen and (max-width: 768px) {

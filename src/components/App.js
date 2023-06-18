@@ -24,7 +24,7 @@ export default function App() {
 
                 <Route exact path='/'>
                     <HeaderMain />
-                    <Main></Main>
+                    <Main />
                     <Footer />
                 </Route>
 

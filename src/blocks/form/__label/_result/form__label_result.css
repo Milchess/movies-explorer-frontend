@@ -4,6 +4,7 @@
     line-height: 13px;
     color: #000000;
     border-bottom: 1px solid #E8E8E8;
+    margin-bottom: 2px;
 }
 
 .form__label_result:last-child {

@@ -5,6 +5,7 @@
     text-align: right;
     padding: 18px 0 14px 224px;
     border-radius: 0;
+    background-color: #FFFFFF;
 }
 
 @media screen and (max-width: 768px) {
