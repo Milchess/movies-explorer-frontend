@@ -7,7 +7,7 @@ function MenuBurger() {
     return (
         <div className="exit-menu">
             <button className="exit-menu__btn" type="button">
-                <img src={BurgerMenu} className="exit-menu__btn-img" alt="Кнопка закрытия" />
+                <img src={BurgerMenu} className="exit-menu__btn-img" alt="Кнопка закрытия"/>
             </button>
             <nav className="main-menu">
                 <ul className="main-menu__elements">
@@ -24,10 +24,10 @@ function MenuBurger() {
             </nav>
             <div className="main-account">
                 <h3 className="main-account__text">Аккаунт</h3>
-                <img className={AccountIcon} src="src/images/iconProfile.svg" alt="Значок профиля" />
+                <img className={AccountIcon} src="src/images/iconProfile.svg" alt="Значок профиля"/>
             </div>
         </div>
-    )
+    );
 }
 
 export default MenuBurger;

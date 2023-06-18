@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Footer() {
-    return(
+    return (
         <footer className="footer">
             <p className="footer__text">Учебный проект Яндекс.Практикум x BeatFilm.</p>
             <div className="footer__author">
@@ -13,7 +13,7 @@ function Footer() {
                 </div>
             </div>
         </footer>
-    )
+    );
 }
 
 export default Footer;

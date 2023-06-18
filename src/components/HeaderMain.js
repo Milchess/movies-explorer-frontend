@@ -5,7 +5,7 @@ import headerLogo from '../images/logoS.svg';
 function HeaderMain() {
     return (
         <div className="header-landing">
-            <img alt="Логотип сайта" className="logo" src={headerLogo} />
+            <img alt="Логотип сайта" className="logo" src={headerLogo}/>
             <div className="btn-box">
                 <Switch>
                     <Route path="/signup">

@@ -13,8 +13,9 @@
 
 @media screen and (max-width: 465px) {
     .form__label_result:first-child {
-        padding:  0 0 8px 0;
+        padding: 0 0 8px 0;
     }
+
     .form__label_result:last-child {
         padding: 8px 0 0 0;
     }

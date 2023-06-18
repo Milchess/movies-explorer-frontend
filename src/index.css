@@ -4,6 +4,7 @@
 @import url('./blocks/page/page.css');
 @import url('./blocks/page/__error-style/page__error-style.css');
 
+@import url('./blocks/header/header.css');
 @import url('./blocks/header-landing/header-landing.css');
 
 @import url('./blocks/btn-box/btn-box.css');
@@ -62,8 +63,6 @@
 @import url('./blocks/footer/__link/footer__link.css');
 @import url('./blocks/footer/__link-text/footer__link-text.css');
 
-@import url('./blocks/header/header.css');
-
 @import url('./blocks/logo/logo.css');
 @import url('./blocks/logo/_center/logo_center.css');
 
@@ -105,7 +104,6 @@
 @import url('./blocks/main-menu/__elements/main-menu__elements.css');
 @import url('./blocks/main-menu/__element/main-menu__element.css');
 @import url('./blocks/main-menu/__link/main-menu__link.css');
-
 @import url('./blocks/main-account/main-account.css');
 @import url('./blocks/main-account/__text/main-account__text.css');
 @import url('./blocks/main-account/__icon/main-account__icon.css');

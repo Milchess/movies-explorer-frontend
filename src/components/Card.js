@@ -5,15 +5,15 @@ import Pic3 from '../images/pic__3.svg';
 
 function Card(props) {
     return (
-        <div className='page'>
+        <div className="page">
             <div className="search">
                 <div className="input-group">
-                    <input className="input-search" type="text" placeholder="Фильм" />
-                        <button className="button-search hover-style" type="button">Поиск</button>
+                    <input className="input-search" type="text" placeholder="Фильм"/>
+                    <button className="button-search hover-style" type="button">Поиск</button>
                 </div>
                 <div className="switch-box">
                     <label className="switch">
-                        <input className="checkbox" type="checkbox" />
+                        <input className="checkbox" type="checkbox"/>
                         <span className="slider"></span>
                     </label>
                     <p className="switch-text">Короткометражки</p>
@@ -148,7 +148,7 @@ function Card(props) {
                 <button className="btn-more hover-style" type="button" aria-label="Ещё">Ещё</button>
             </div>
         </div>
-    )
+    );
 }
 
 export default Card;

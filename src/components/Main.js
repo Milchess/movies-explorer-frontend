@@ -23,9 +23,14 @@ function Main() {
                 <h1 className="landing-title">Учебный проект студента факультета Веб-разработки.</h1>
             </div>
             <div className="landing-nav">
-                <button onClick={() => handleScrollToMain(project)} className="landing-nav__text hover-style">О проекте</button>
-                <button onClick={() => handleScrollToMain(technologies)} className="landing-nav__text hover-style">Технологии</button>
-                <button onClick={() => handleScrollToMain(student)} className="landing-nav__text hover-style">Студент</button>
+                <button onClick={() => handleScrollToMain(project)} className="landing-nav__text hover-style">О
+                    проекте
+                </button>
+                <button onClick={() => handleScrollToMain(technologies)}
+                        className="landing-nav__text hover-style">Технологии
+                </button>
+                <button onClick={() => handleScrollToMain(student)} className="landing-nav__text hover-style">Студент
+                </button>
             </div>
             <div ref={project} className="section-landing">
                 <h2 className="title">О проекте</h2>

@@ -14,42 +14,42 @@ export default function App() {
     return (
         <div className="page">
             <Switch>
-                <Route path='/signin'>
-                    <Login />
+                <Route path="/signin">
+                    <Login/>
                 </Route>
 
-                <Route path='/signup'>
-                    <Register />
+                <Route path="/signup">
+                    <Register/>
                 </Route>
 
-                <Route exact path='/'>
-                    <HeaderMain />
-                    <Main />
-                    <Footer />
+                <Route exact path="/">
+                    <HeaderMain/>
+                    <Main/>
+                    <Footer/>
                 </Route>
 
-                <Route path='/films'>
-                    <Header />
+                <Route path="/films">
+                    <Header/>
                     <Card
                         isSavedFilms={true}
                     />
-                    <Footer />
+                    <Footer/>
                 </Route>
 
-                <Route path='/profile'>
-                    <Header />
-                    <Profile />
+                <Route path="/profile">
+                    <Header/>
+                    <Profile/>
                 </Route>
 
                 <Route>
-                    <ErrorPage />
+                    <ErrorPage/>
                 </Route>
 
-                <Route  path=''>
-                    <Redirect to='/' />
+                <Route path="">
+                    <Redirect to="/"/>
                 </Route>
             </Switch>
 
         </div>
-    )
+    );
 }
