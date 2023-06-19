@@ -21,18 +21,20 @@ function Main() {
         <div className='page'>
             <Promo/>
             <NavTab
-                onClick={() => handleScrollToMain(project)}
-                onClick={() => handleScrollToMain(technologies)}
-                onClick={() => handleScrollToMain(student)}
+                handlerClick={handleScrollToMain}
+                project={project}
+                technologies={technologies}
+                student={student}
             />
+
             <AboutProject
-                ref={project}
+                innerRef={project}
             />
             <Techs
-                ref={technologies}
+                innerRef={technologies}
             />
             <AboutMe
-                ref={student}
+                innerRef={student}
             />
         </div>
     );

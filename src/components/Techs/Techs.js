@@ -2,9 +2,9 @@ import React from 'react';
 import '../../index.css';
 import './Techs.css';
 
-function Techs() {
+function Techs(props) {
     return (
-        <div className='section-landing section-landing_grey'>
+        <div ref={props.innerRef} className='section-landing section-landing_grey'>
             <h2 className='section-landing__title'>Технологии</h2>
             <div className='technologies-box'>
                 <p className='technologies-box__title'>7 технологий</p>

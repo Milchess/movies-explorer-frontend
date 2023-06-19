@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 import photoStudent from '../../images/photoStudent.png';
 import Portfolio from '../Portfolio/Portfolio';
 
-function AboutMe() {
+function AboutMe(props) {
     return (
-        <div className='section-landing'>
+        <div ref={props.innerRef} className='section-landing'>
             <h2 className='section-landing__title'>Студент</h2>
             <div className='portfolio'>
                 <div className='portfolio-about'>
