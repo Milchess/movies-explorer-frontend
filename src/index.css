@@ -2,80 +2,15 @@
 @import url('./vendor/fonts/fonts.css');
 
 @import url('./blocks/page/page.css');
-@import url('./blocks/page/__error-style/page__error-style.css');
-
-@import url('./blocks/header/header.css');
-@import url('./blocks/header-landing/header-landing.css');
-
-@import url('./blocks/btn-box/btn-box.css');
-@import url('./blocks/btn-reg/btn-reg.css');
-@import url('./blocks/btn-enter/btn-enter.css');
-
-@import url('./blocks/landing-main/landing-main.css');
-@import url('./blocks/landing-img/landing-img.css');
-@import url('./blocks/landing-title/landing-title.css');
-@import url('./blocks/landing-nav/landing-nav.css');
-@import url('./blocks/landing-nav/__text/landing-nav__text.css');
 
 @import url('./blocks/section-landing/section-landing.css');
 @import url('./blocks/section-landing/_grey/section-landing_grey.css');
-
-@import url('./blocks/title/title.css');
-
-@import url('./blocks/project-box/project-box.css');
-@import url('./blocks/project-box/__text/project-box__text.css');
-@import url('./blocks/project-box/__title/project-box__title.css');
-@import url('./blocks/project-box/__subtitle/project-box__subtitle.css');
-@import url('./blocks/project-time/project-time.css');
-@import url('./blocks/project-time/__line/project-time__line.css');
-@import url('./blocks/project-time/__line-back/project-time__line-back.css');
-@import url('./blocks/project-time/__line-front/project-time__line-front.css');
-@import url('./blocks/project-time/__line-text-back/project-time__line-text-back.css');
-@import url('./blocks/project-time/__line-text-front/project-time__line-text-front.css');
-
-@import url('./blocks/technologies-box/technologies-box.css');
-@import url('./blocks/technologies-box/__title/technologies-box__title.css');
-@import url('./blocks/technologies-box/__subtitle/technologies-box__subtitle.css');
-@import url('./blocks/technologies-list/technologies-list.css');
-@import url('./blocks/technologies-list/__element/technologies-list__element.css');
-
-@import url('./blocks/portfolio/portfolio.css');
-@import url('./blocks/portfolio/__photo/portfolio__photo.css');
-@import url('./blocks/portfolio-about/portfolio-about.css');
-@import url('./blocks/portfolio-about/__name/portfolio-about__name.css');
-@import url('./blocks/portfolio-about/__inform/portfolio-about__inform.css');
-@import url('./blocks/portfolio-about/__inform-text/portfolio-about__inform-text.css');
-@import url('./blocks/portfolio-link/portfolio-link.css');
-
-@import url('./blocks/link-github/link-github.css');
-
-@import url('./blocks/nav-site/nav-site.css');
-@import url('./blocks/nav-site/__element/nav-site__element.css');
-@import url('./blocks/nav-site/__text/nav-site__text.css');
-@import url('./blocks/nav-site/__img/nav-site__img.css');
+@import url('blocks/section-landing/__title/section-landing__title.css');
 
 @import url('./blocks/hover-style/hover-style.css');
 
-@import url('./blocks/footer/footer.css');
-@import url('./blocks/footer/__text/footer__text.css');
-@import url('./blocks/footer/__author/footer__author.css');
-@import url('./blocks/footer/__copyright/footer__copyright.css');
-@import url('./blocks/footer/__link/footer__link.css');
-@import url('./blocks/footer/__link-text/footer__link-text.css');
-
 @import url('./blocks/logo/logo.css');
 @import url('./blocks/logo/_center/logo_center.css');
-
-@import url('./blocks/burger-menu/burger-menu.css');
-@import url('./blocks/burger-menu/__img/burger-menu__img.css');
-
-@import url('./blocks/nav/nav.css');
-@import url('./blocks/nav/__profile/nav__profile.css');
-@import url('./blocks/nav/__text/nav__text.css');
-
-@import url('./blocks/account/account.css');
-@import url('./blocks/account/__text/account__text.css');
-@import url('./blocks/account/__icon/account__icon.css');
 
 @import url('./blocks/result-form/result-form.css');
 @import url('./blocks/result-form/__title/result-form__title.css');
@@ -91,53 +26,14 @@
 @import url('./blocks/form/__error/form__error.css');
 @import url('./blocks/form/__result/form__result.css');
 
-@import url('./blocks/page-error/page-error.css');
-@import url('./blocks/page-error/__title/page-error__title.css');
-@import url('./blocks/page-error/__subtitle/page-error__subtitle.css');
-@import url('./blocks/page-error/__link-back/page-error__link-back.css');
-
-@import url('./blocks/exit-menu/exit-menu.css');
-@import url('./blocks/exit-menu/__btn/exit-menu__btn.css');
-@import url('./blocks/exit-menu/__btn-img/exit-menu__btn-img.css');
-
-@import url('./blocks/main-menu/main-menu.css');
-@import url('./blocks/main-menu/__elements/main-menu__elements.css');
-@import url('./blocks/main-menu/__element/main-menu__element.css');
-@import url('./blocks/main-menu/__link/main-menu__link.css');
-@import url('./blocks/main-account/main-account.css');
-@import url('./blocks/main-account/__text/main-account__text.css');
-@import url('./blocks/main-account/__icon/main-account__icon.css');
-
 @import url('./blocks/line-box/line-box.css');
 
 @import url('./blocks/elements/elements.css');
 
 @import url('./blocks/grid-cards/grid-cards.css');
 
-@import url('./blocks/grid-card/grid-card.css');
-@import url('./blocks/grid-card/__container/grid-card__container.css');
-@import url('./blocks/grid-card/__image/grid-card__image.css');
-@import url('./blocks/grid-card/__item/grid-card__item.css');
-@import url('./blocks/grid-card/__title/grid-card__title.css');
-@import url('./blocks/grid-card/__like/grid-card__like.css');
-@import url('./blocks/grid-card/__delete/grid-card__delete.css');
-@import url('./blocks/grid-card/__time/grid-card__time.css');
-
-@import url('./blocks/box-more/box-more.css');
-@import url('./blocks/btn-more/btn-more.css');
-
 @import url('./blocks/user-profile/user-profile.css');
 @import url('./blocks/user-profile/__title/user-profile__title.css');
 @import url('./blocks/user-profile/__btn-box/user-profile__btn-box.css');
 @import url('./blocks/user-profile/__edit/user-profile__edit.css');
 @import url('./blocks/user-profile/__exit/user-profile__exit.css');
-
-@import url('./blocks/search/search.css');
-
-@import url('./blocks/input-group/input-group.css');
-@import url('./blocks/input-search/input-search.css');
-@import url('./blocks/button-search/button-search.css');
-@import url('./blocks/switch-box/switch-box.css');
-@import url('./blocks/switch/switch.css');
-@import url('./blocks/slider/slider.css');
-@import url('./blocks/switch-text/switch-text.css');

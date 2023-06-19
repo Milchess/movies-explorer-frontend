@@ -1,0 +1,35 @@
+.box-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 815px) {
+    .box-more {
+        height: 138px;
+        margin-bottom: 69px;
+    }
+}
+
+.box-more__btn {
+    background: #F9F9F9;
+    border-radius: 6px;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #000000;
+    padding: 11px 148px;
+}
+
+@media screen and (max-width: 320px) {
+    .box-more__btn {
+        padding: 11px 107px;
+    }
+}
