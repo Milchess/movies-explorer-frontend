@@ -3,7 +3,7 @@ import Pic1 from '../images/pic__1.svg';
 import Pic2 from '../images/pic__2.svg';
 import Pic3 from '../images/pic__3.svg';
 
-function Card(props) {
+function Movies(props) {
     return (
         <div className='page'>
             <div className='search'>
@@ -151,4 +151,4 @@ function Card(props) {
     );
 }
 
-export default Card;
+export default Movies;
