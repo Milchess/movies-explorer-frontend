@@ -3,12 +3,6 @@
 
 @import url('./blocks/page/page.css');
 
-@import url('./blocks/header/header.css');
-
-@import url('./blocks/btn-box/btn-box.css');
-@import url('./blocks/btn-reg/btn-reg.css');
-@import url('./blocks/btn-enter/btn-enter.css');
-
 @import url('./blocks/section-landing/section-landing.css');
 @import url('./blocks/section-landing/_grey/section-landing_grey.css');
 @import url('blocks/section-landing__title/section-landing__title.css');
@@ -17,17 +11,6 @@
 
 @import url('./blocks/logo/logo.css');
 @import url('./blocks/logo/_center/logo_center.css');
-
-@import url('./blocks/burger-menu/burger-menu.css');
-@import url('./blocks/burger-menu/__img/burger-menu__img.css');
-
-@import url('./blocks/nav/nav.css');
-@import url('./blocks/nav/__profile/nav__profile.css');
-@import url('./blocks/nav/__text/nav__text.css');
-
-@import url('./blocks/account/account.css');
-@import url('./blocks/account/__text/account__text.css');
-@import url('./blocks/account/__icon/account__icon.css');
 
 @import url('./blocks/result-form/result-form.css');
 @import url('./blocks/result-form/__title/result-form__title.css');
@@ -60,9 +43,6 @@
 @import url('./blocks/elements/elements.css');
 
 @import url('./blocks/grid-cards/grid-cards.css');
-
-@import url('./blocks/box-more/box-more.css');
-@import url('./blocks/btn-more/btn-more.css');
 
 @import url('./blocks/user-profile/user-profile.css');
 @import url('./blocks/user-profile/__title/user-profile__title.css');

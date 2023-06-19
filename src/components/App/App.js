@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import HeaderMain from '../HeaderMain/HeaderMain';
-import Header from '../Header';
+import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Login from '../Login';
 import Register from '../Register';
@@ -31,16 +31,13 @@ export default function App() {
 
                 <Route path='/movies'>
                     <Header/>
-                    <Movies
-                        isSavedFilms={true}
-                    />
+                    <Movies/>
                     <Footer/>
                 </Route>
 
                 <Route path='/saved-movies'>
                     <Header/>
-                    <SavedMovies
-                    />
+                    <SavedMovies/>
                     <Footer/>
                 </Route>
 

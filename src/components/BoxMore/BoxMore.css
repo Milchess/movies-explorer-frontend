@@ -1,4 +1,20 @@
-.btn-more {
+.box-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 815px) {
+    .box-more {
+        height: 138px;
+        margin-bottom: 69px;
+    }
+}
+
+.box-more__btn {
     background: #F9F9F9;
     border-radius: 6px;
     border: none;
@@ -13,7 +29,7 @@
 }
 
 @media screen and (max-width: 320px) {
-    .btn-more {
+    .box-more__btn {
         padding: 11px 107px;
     }
 }
