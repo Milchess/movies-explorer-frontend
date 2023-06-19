@@ -18,9 +18,7 @@
 
 @media screen and (max-width: 768px) {
     .nav__profile {
-        visibility: hidden;
-        width: 0;
-        margin: 0;
+        display: none;
     }
 }
 
@@ -54,11 +52,7 @@
 
 @media screen and (max-width: 768px) {
     .account {
-        visibility: hidden;
-        width: 0;
-        height: 0;
-        margin: 0;
-        border: none;
+        display: none;
     }
 }
 

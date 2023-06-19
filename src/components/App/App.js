@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import HeaderMain from '../HeaderMain/HeaderMain';
 import Header from '../Header/Header';
@@ -10,8 +10,16 @@ import Main from '../Main/Main';
 import Movies from '../Movies';
 import Profile from '../Profile';
 import SavedMovies from '../SavedMovies';
+import MenuBurger from '../MenuBurger/MenuBurger';
 
 export default function App() {
+    const [isMenuOpen, toggleMenu] = useState(false);
+
+    function toggleMenuMode() {
+        toggleMenu(!isMenuOpen);
+    }
+
+
     return (
         <div className='page'>
             <Switch>
@@ -30,19 +38,37 @@ export default function App() {
                 </Route>
 
                 <Route path='/movies'>
-                    <Header/>
+                    <MenuBurger
+                        handlerClickClose={toggleMenuMode}
+                        isMenuOpen={isMenuOpen}
+                    />
+                    <Header
+                        onButtonClick={toggleMenuMode}
+                    />
                     <Movies/>
                     <Footer/>
                 </Route>
 
                 <Route path='/saved-movies'>
-                    <Header/>
+                    <MenuBurger
+                        handlerClickClose={toggleMenuMode}
+                        isMenuOpen={isMenuOpen}
+                    />
+                    <Header
+                        onButtonClick={toggleMenuMode}
+                    />
                     <SavedMovies/>
                     <Footer/>
                 </Route>
 
                 <Route path='/profile'>
-                    <Header/>
+                    <MenuBurger
+                        handlerClickClose={toggleMenuMode}
+                        isMenuOpen={isMenuOpen}
+                    />
+                    <Header
+                        onButtonClick={toggleMenuMode}
+                    />
                     <Profile/>
                 </Route>
 

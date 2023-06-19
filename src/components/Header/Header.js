@@ -5,11 +5,13 @@ import '../../index.css';
 import './Header.css';
 import Navigation from '../Navigation/Navigation';
 
-function Header() {
+function Header(props) {
     return (
         <div className='header'>
             <Link to='/'><img className='logo' src={headerLogo} alt='Логотип сайта'/></Link>
-            <Navigation/>
+            <Navigation
+                onButtonClick={props.onButtonClick}
+            />
         </div>
     );
 }
