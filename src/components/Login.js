@@ -5,7 +5,7 @@ import headerLogo from '../images/logoS.svg';
 function Login() {
     return (
         <div className='result-form'>
-            <img className='logo logo_center' src={headerLogo} alt='Логотип сайта'/>
+            <Link to='/'><img className='logo logo_center' src={headerLogo} alt='Логотип сайта'/></Link>
             <h1 className='result-form__title'>Рады видеть!</h1>
             <form className='form'>
                 <label className='form__label'>E-mail</label>
