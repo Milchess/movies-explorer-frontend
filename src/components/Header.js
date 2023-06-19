@@ -7,11 +7,13 @@ import { Link } from 'react-router-dom';
 function Header() {
     return (
         <div className='header'>
-            <img className='logo' src={headerLogo} alt='Логотип сайта'/>
+            <Link to='/'>
+                <img className='logo' src={headerLogo} alt='Логотип сайта'/>
+            </Link>
             <nav className='nav'>
                 <nav className='nav__profile'>
-                    <Link to='/films' className='nav__text hover-style'>Фильмы</Link>
-                    <Link to='/films' className='nav__text hover-style'>Сохранённые фильмы</Link>
+                    <Link to='/movies' className='nav__text hover-style'>Фильмы</Link>
+                    <Link to='/saved-movies' className='nav__text hover-style'>Сохранённые фильмы</Link>
                 </nav>
                 <Link to='/profile' className='account hover-style'>
                     <h3 className='account__text'>Аккаунт</h3>

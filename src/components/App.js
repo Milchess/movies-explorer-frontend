@@ -7,8 +7,9 @@ import Login from './Login';
 import Register from './Register';
 import ErrorPage from './Error';
 import Main from './Main';
-import Card from './Card';
+import Movies from './Movies';
 import Profile from './Profile';
+import SavedMovies from './SavedMovies';
 
 export default function App() {
     return (
@@ -28,10 +29,16 @@ export default function App() {
                     <Footer/>
                 </Route>
 
-                <Route path='/films'>
+                <Route path='/movies'>
                     <Header/>
-                    <Card
-                        isSavedFilms={true}
+                    <Movies isSavedFilms={true}
+                    />
+                    <Footer/>
+                </Route>
+
+                <Route path='/saved-movies'>
+                    <Header/>
+                    <SavedMovies
                     />
                     <Footer/>
                 </Route>
