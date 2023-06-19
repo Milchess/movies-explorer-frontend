@@ -1,11 +1,11 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import HeaderMain from '../HeaderMain';
+import HeaderMain from '../HeaderMain/HeaderMain';
 import Header from '../Header';
-import Footer from '../Footer';
+import Footer from '../Footer/Footer';
 import Login from '../Login';
 import Register from '../Register';
-import ErrorPage from '../Error';
+import ErrorPage from '../Error/Error';
 import Main from '../Main/Main';
 import Movies from '../Movies';
 import Profile from '../Profile';

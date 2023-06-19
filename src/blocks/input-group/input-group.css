@@ -1,9 +1,0 @@
-.input-group {
-    width: 89%;
-    display: flex;
-    align-items: center;
-    border: 2px solid rgb(170, 170, 170, .1);
-    border-radius: 8px;
-    background-color: transparent;
-    margin: 70px auto 0;
-}
