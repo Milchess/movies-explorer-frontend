@@ -5,7 +5,7 @@
 
 @import url('./blocks/section-landing/section-landing.css');
 @import url('./blocks/section-landing/_grey/section-landing_grey.css');
-@import url('blocks/section-landing__title/section-landing__title.css');
+@import url('blocks/section-landing/__title/section-landing__title.css');
 
 @import url('./blocks/hover-style/hover-style.css');
 
