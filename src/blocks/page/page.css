@@ -6,6 +6,8 @@
     background-color: #FFFFFF;
     font-family: 'Inter', sans-serif;
     font-style: normal;
+    display: flex;
+    flex-direction: column;
 }
 
 @media screen and (max-width: 768px) {
