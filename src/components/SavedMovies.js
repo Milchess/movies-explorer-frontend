@@ -5,16 +5,18 @@ import BoxMore from './BoxMore/BoxMore';
 
 function SavedMovies() {
     return (
-        <div className='page'>
+        <>
             <SearchForm/>
             <div className='line-box'></div>
             <div className='elements'>
                 <ul className='grid-cards'>
-                    <MoviesCard/>
+                    <MoviesCard
+                        isMySave={true}
+                    />
                 </ul>
             </div>
             <BoxMore/>
-        </div>
+        </>
     );
 }
 

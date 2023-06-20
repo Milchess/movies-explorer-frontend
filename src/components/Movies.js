@@ -3,17 +3,19 @@ import SearchForm from './SearchForm/SearchForm';
 import MoviesCard from './MoviesCard/MoviesCard';
 import BoxMore from './BoxMore/BoxMore';
 
-function Movies(props) {
+function Movies() {
     return (
-        <div className='page'>
+        <>
             <SearchForm/>
             <div className='elements'>
                 <ul className='grid-cards'>
-                    <MoviesCard/>
+                    <MoviesCard
+                        isMySave={false}
+                    />
                 </ul>
             </div>
             <BoxMore/>
-        </div>
+        </>
     );
 }
 
