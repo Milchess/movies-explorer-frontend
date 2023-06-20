@@ -110,7 +110,7 @@
     color: #000000;
 }
 
-.main-menu__link:active {
+.main-menu__link_active {
     border-bottom: 2px solid #000000;
 }
 

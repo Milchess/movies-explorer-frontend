@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import ExitMenu from '../../images/exitMenu.svg';
 import AccountIcon from '../../images/iconProfile.svg';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import '../../index.css';
 import './MenuBurger.css';
 
@@ -10,7 +10,7 @@ function MenuBurger(props) {
         <div className={`menu ${props.isMenuOpen ? 'menu_opened' : ''}`}>
             <div className="exit-menu">
                 <button className="exit-menu__btn" type="button">
-                    <img src={ExitMenu} className="exit-menu__btn-img" alt="Кнопка закрытия"
+                    <img src={ExitMenu} className="exit-menu__btn-img hover-style" alt="Кнопка закрытия"
                          onClick={props.handlerClickClose}/>
                 </button>
                 <div className="exit-menu__box">
@@ -20,11 +20,13 @@ function MenuBurger(props) {
                                 <Link to="/" className="main-menu__link hover-style">Главная</Link>
                             </li>
                             <li className="main-menu__element">
-                                <Link to="/movies" className="main-menu__link hover-style">Фильмы</Link>
+                                <NavLink to="/movies"
+                                         className={useCallback((isActive) => `main-menu__link hover-style ${isActive ? 'main-menu__link_active' : ''}`, [])}>Фильмы</NavLink>
                             </li>
                             <li className="main-menu__element">
-                                <Link to="/saved-movies" className="main-menu__link hover-style">Сохранённые
-                                    фильмы</Link>
+                                <NavLink to="/saved-movies"
+                                         className={useCallback((isActive) => `main-menu__link hover-style ${isActive ? 'main-menu__link_active' : ''}`, [])}>Сохранённые
+                                    фильмы</NavLink>
                             </li>
                         </ul>
                     </nav>

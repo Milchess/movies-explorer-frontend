@@ -14,11 +14,15 @@ import MenuBurger from '../MenuBurger/MenuBurger';
 
 export default function App() {
     const [isMenuOpen, toggleMenu] = useState(false);
+    const [isEditProfile, toggleEditProfile] = useState(true);
 
     function toggleMenuMode() {
         toggleMenu(!isMenuOpen);
     }
 
+    function toggleEditProfileMode() {
+        toggleEditProfile(!isEditProfile);
+    }
 
     return (
         <div className='page'>
@@ -69,7 +73,10 @@ export default function App() {
                     <Header
                         onButtonClick={toggleMenuMode}
                     />
-                    <Profile/>
+                    <Profile
+                        onButtonClick={toggleEditProfileMode}
+                        isEditProfile={isEditProfile}
+                    />
                 </Route>
 
                 <Route>
