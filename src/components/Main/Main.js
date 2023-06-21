@@ -18,7 +18,7 @@ function Main() {
     }
 
     return (
-        <div className='page'>
+        <>
             <Promo/>
             <NavTab
                 handlerClick={handleScrollToMain}
@@ -36,7 +36,7 @@ function Main() {
             <AboutMe
                 innerRef={student}
             />
-        </div>
+        </>
     );
 }
 

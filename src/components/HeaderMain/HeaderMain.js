@@ -21,7 +21,6 @@ function HeaderMain() {
                         <Link to='/signin' className='btn-enter hover-style'>Войти</Link>
                     </Route>
                 </Switch>
-
             </div>
         </div>
     );

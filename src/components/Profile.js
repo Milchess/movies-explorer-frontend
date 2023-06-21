@@ -6,7 +6,7 @@ function Profile(props) {
     return (
         <div className='user-profile'>
             <h1 className='user-profile__title'>Привет, Ксения!</h1>
-            <form className='form form__result'>
+            <form className='form form_result'>
                 <label className='form__label form__label_result'>Имя
                     <input className='form__input form__input_result' type='text' required
                            placeholder='Ксения' minLength={2} maxLength={30} disabled={props.isEditProfile}/></label>
