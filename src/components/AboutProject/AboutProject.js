@@ -2,9 +2,9 @@ import React from 'react';
 import '../../index.css';
 import './AboutProject.css';
 
-function AboutProject(props) {
+function AboutProject() {
     return (
-        <section ref={props.innerRef} className='section-landing'>
+        <section id='about-project' className='section-landing'>
             <h2 className='section-landing__title'>О проекте</h2>
             <div className='project-box'>
                 <div className='project-box__text'>

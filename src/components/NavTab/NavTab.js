@@ -1,23 +1,17 @@
 import React from 'react';
 import './NavTab.css';
 
-function NavTab(props) {
+function NavTab() {
     return (
         <ul className="landing-nav">
             <li>
-                <button onClick={() => props.handlerClick(props.project)}
-                        className="landing-nav__text hover-style">О проекте
-                </button>
+                <a href='#about-project' className="landing-nav__text hover-style">О проекте</a>
             </li>
             <li>
-                <button onClick={() => props.handlerClick(props.technologies)}
-                        className="landing-nav__text hover-style">Технологии
-                </button>
+                <a href='#techs' className="landing-nav__text hover-style">Технологии</a>
             </li>
             <li>
-                <button onClick={() => props.handlerClick(props.student)}
-                        className="landing-nav__text hover-style">Студент
-                </button>
+                <a href='#about-me' className="landing-nav__text hover-style">Студент</a>
             </li>
         </ul>
     );

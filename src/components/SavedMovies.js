@@ -12,6 +12,8 @@ function SavedMovies() {
                 <ul className='grid-cards'>
                     <MoviesCard
                         isMySave={true}
+                        description={'33 слова о дизайне'}
+                        linkMovies={'https://www.kinopoisk.ru/film/1302273/'}
                     />
                 </ul>
             </div>
