@@ -8,7 +8,7 @@ import Navigation from '../Navigation/Navigation';
 function Header(props) {
     return (
         <header className='header'>
-            <Link to='/'><img className='logo' src={headerLogo} alt='Логотип сайта'/></Link>
+            <Link to='/'><img className='logo hover-style' src={headerLogo} alt='Логотип сайта'/></Link>
             <Navigation
                 onButtonClick={props.onButtonClick}
             />

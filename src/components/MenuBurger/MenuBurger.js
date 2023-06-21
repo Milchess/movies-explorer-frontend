@@ -30,7 +30,7 @@ function MenuBurger(props) {
                             </li>
                         </ul>
                     </nav>
-                    <Link to="/profile" className="main-account">
+                    <Link to="/profile" className="main-account hover-style">
                         <h3 className="main-account__text">Аккаунт</h3>
                         <img className="main-account__icon" src={AccountIcon} alt="Значок профиля"/>
                     </Link>

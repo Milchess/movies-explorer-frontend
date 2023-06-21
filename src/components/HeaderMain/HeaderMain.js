@@ -7,7 +7,7 @@ import './HeaderMain.css';
 function HeaderMain() {
     return (
         <section className='header-landing'>
-            <Link to='/'><img alt='Логотип сайта' className='logo' src={headerLogo}/></Link>
+            <Link to='/'><img alt='Логотип сайта' className='logo hover-style' src={headerLogo}/></Link>
             <div className='btn-box'>
                 <Switch>
                     <Route path='/signup'>
