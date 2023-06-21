@@ -39,7 +39,7 @@
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 350px) {
     .landing-main__img {
         width: 248px;
         height: 248px;

@@ -10,12 +10,25 @@
     display: flex;
     flex-direction: column;
     margin: 0;
+    text-decoration: none;
 }
 
 .grid-card__image {
     height: 203px;
     object-fit: cover;
     border-radius: 6px;
+}
+
+@media screen and (max-width: 768px) {
+    .grid-card__image {
+        height: 190px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .grid-card__image {
+        height: 169px;
+    }
 }
 
 .grid-card__item {
@@ -67,7 +80,7 @@
     background-repeat: no-repeat;
     background-color: transparent;
     object-fit: cover;
-    width: 7px;
+    width: 10px;
     height: 7px;
     border: none;
     padding: 0;

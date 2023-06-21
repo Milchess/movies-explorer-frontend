@@ -142,12 +142,12 @@
 
 @media screen and (max-width: 455px) {
     .link-github {
-        margin-top: 72px;
+        margin-top: 57px;
     }
 }
 
 .portfolio__photo {
-    max-width: 270px;
+    width: 270px;
     max-height: 327px;
     overflow: hidden;
     object-fit: cover;
@@ -157,6 +157,7 @@
 @media screen and (max-width: 768px) {
     .portfolio__photo {
         max-height: 306px;
+        width: 255px;
     }
 }
 
@@ -168,6 +169,18 @@
         height: 100%;
         grid-column: 1;
         grid-row: 1;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .portfolio__photo {
+        width: 276px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .portfolio__photo {
+        width: 285px;
     }
 }
 

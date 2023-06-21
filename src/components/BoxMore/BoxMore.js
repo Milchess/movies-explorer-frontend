@@ -2,10 +2,10 @@ import React from 'react';
 import '../../index.css';
 import './BoxMore.css';
 
-function BoxMore() {
+function BoxMore(props) {
     return (
-        <section className='box-more'>
-            <button className='box-more__btn hover-style' type='button' aria-label='Ещё'>Ещё</button>
+        <section className={`box-more ${props.isSaveMovies && 'box-more_saved'}`}>
+            <button className={`box-more__btn hover-style ${props.isSaveMovies && 'style-hidden'}`} type='button' aria-label='Ещё'>Ещё</button>
         </section>
     )
 }

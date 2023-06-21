@@ -17,7 +17,9 @@ function SavedMovies() {
                     />
                 </ul>
             </div>
-            <BoxMore/>
+            <BoxMore
+                isSaveMovies={true}
+            />
         </>
     );
 }

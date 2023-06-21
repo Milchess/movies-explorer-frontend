@@ -1,6 +1,12 @@
 .line-box {
     border-bottom: #AAAAAA solid 1px;
     opacity: 0.2;
-    max-width: 1140px;
-    padding: 19px;
+    width: 90%;
+    margin: 41px auto 0
+}
+
+@media screen and (max-width: 768px) {
+    .line-box {
+        margin-top: 0;
+    }
 }

@@ -14,7 +14,12 @@
 @media screen and (max-width: 320px) {
     .footer {
         background: #FFFFFF;
+        height: 0;
     }
+}
+
+.footer_main {
+    height: 0;
 }
 
 .footer__text {
@@ -42,7 +47,17 @@
         line-height: 15px;
         margin-right: 10px;
         margin-left: 10px;
-        margin-bottom: 31px;
+        margin-bottom: 14px;
+    }
+}
+
+.footer__text_main {
+    margin-top: 58px;
+}
+
+@media screen and (max-width: 768px) {
+    .footer__text_main {
+        margin-top: 19px;
     }
 }
 
@@ -80,7 +95,7 @@
         line-height: 15px;
         color: #A0A0A0;
         margin-left: 109px;
-        margin-top: 31px;
+        margin-top: 15px;
         margin-bottom: 0;
     }
 }

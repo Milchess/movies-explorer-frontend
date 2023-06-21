@@ -7,8 +7,8 @@
     margin-bottom: 2px;
 }
 
-.form__label_result:last-child {
-    border-bottom: none;
+.form__label_result:nth-last-child(2) {
+    border-bottom: 0;
 }
 
 @media screen and (max-width: 465px) {
@@ -16,7 +16,7 @@
         padding: 0 0 8px 0;
     }
 
-    .form__label_result:last-child {
+    .form__label_result:nth-last-child(2) {
         padding: 8px 0 0 0;
     }
 }

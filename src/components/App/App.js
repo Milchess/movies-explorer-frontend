@@ -38,7 +38,9 @@ export default function App() {
                 <Route exact path='/'>
                     <HeaderMain/>
                     <Main/>
-                    <Footer/>
+                    <Footer
+                        isMain={true}
+                    />
                 </Route>
 
                 <Route path='/movies'>

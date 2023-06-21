@@ -113,6 +113,7 @@
 
 .main-menu__link_active {
     border-bottom: 2px solid #000000;
+    padding-bottom: 6px;
 }
 
 .main-account {
@@ -123,7 +124,7 @@
     align-items: center;
     max-width: 100px;
     max-height: 32px;
-    margin-top: 599px;
+    margin-top: 412px;
     text-decoration: none;
 }
 

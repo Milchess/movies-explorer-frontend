@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import '../../index.css';
 import './Footer.css';
 
-function Footer() {
+function Footer(props) {
     return (
-        <footer className="footer">
-            <p className="footer__text">Учебный проект Яндекс.Практикум x BeatFilm.</p>
+        <footer className={`footer ${props.isMain && 'footer_main'}`}>
+            <p className={`footer__text ${props.isMain && 'footer__text_main'}`}>Учебный проект Яндекс.Практикум x BeatFilm.</p>
             <div className="footer__author">
                 <p className="footer__copyright">&copy; 2023</p>
                 <ul className="footer__link">
