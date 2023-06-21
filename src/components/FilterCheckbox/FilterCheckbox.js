@@ -6,8 +6,8 @@ function FilterCheckbox() {
     return (
         <div className="switch-box">
             <label className="switch">
-                <input className="checkbox" type="checkbox"/>
-                <span className="slider"></span>
+                <input className="switch__checkbox" type="checkbox"/>
+                <span className="switch__slider"></span>
             </label>
             <p className="switch-box__text">Короткометражки</p>
         </div>
