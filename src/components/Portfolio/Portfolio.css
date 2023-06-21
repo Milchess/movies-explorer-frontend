@@ -21,6 +21,7 @@
     border-bottom: #E8E8E8 solid 1px;
     padding-bottom: 19px;
     margin-bottom: 20px;
+    text-decoration: none;
 }
 
 .nav-site__element:last-child {
