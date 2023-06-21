@@ -6,7 +6,7 @@ import './HeaderMain.css';
 
 function HeaderMain() {
     return (
-        <div className='header-landing'>
+        <section className='header-landing'>
             <Link to='/'><img alt='Логотип сайта' className='logo' src={headerLogo}/></Link>
             <div className='btn-box'>
                 <Switch>
@@ -22,7 +22,7 @@ function HeaderMain() {
                     </Route>
                 </Switch>
             </div>
-        </div>
+        </section>
     );
 }
 

@@ -7,11 +7,11 @@ import Portfolio from '../Portfolio/Portfolio';
 
 function AboutMe(props) {
     return (
-        <div ref={props.innerRef} className='section-landing'>
+        <section ref={props.innerRef} className='section-landing'>
             <h2 className='section-landing__title'>Студент</h2>
             <div className='portfolio'>
                 <div className='portfolio-about'>
-                    <p className='portfolio-about__name'>Ксения</p>
+                    <h2 className='portfolio-about__name'>Ксения</h2>
                     <p className='portfolio-about__inform'>Фронтенд-разработчик, 30 лет</p>
                     <p className='portfolio-about__inform-text'>Живу в Челябинске, закончила юриспруденцию ЧелГУ.
                         Замужем,
@@ -26,7 +26,7 @@ function AboutMe(props) {
             </div>
             <Link to={{ pathname: 'https://github.com/Milchess' }} className='portfolio-link hover-style' target='_blank'>Портфолио</Link>
             <Portfolio/>
-        </div>
+        </section>
     )
 }
 

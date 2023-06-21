@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Profile(props) {
     return (
-        <div className='user-profile'>
+        <section className='user-profile'>
             <h1 className='user-profile__title'>Привет, Ксения!</h1>
             <form className='form form_result'>
                 <label className='form__label form__label_result'>Имя
@@ -23,7 +23,7 @@ function Profile(props) {
                     аккаунта
                 </Link>
             </div>
-        </div>
+        </section>
     );
 }
 

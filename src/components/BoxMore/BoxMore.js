@@ -4,9 +4,9 @@ import './BoxMore.css';
 
 function BoxMore() {
     return (
-        <div className='box-more'>
+        <section className='box-more'>
             <button className='box-more__btn hover-style' type='button' aria-label='Ещё'>Ещё</button>
-        </div>
+        </section>
     )
 }
 

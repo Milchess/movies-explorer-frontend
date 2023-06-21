@@ -7,12 +7,12 @@ import Navigation from '../Navigation/Navigation';
 
 function Header(props) {
     return (
-        <div className='header'>
+        <header className='header'>
             <Link to='/'><img className='logo' src={headerLogo} alt='Логотип сайта'/></Link>
             <Navigation
                 onButtonClick={props.onButtonClick}
             />
-        </div>
+        </header>
     );
 }
 

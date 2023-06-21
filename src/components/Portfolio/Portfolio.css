@@ -1,6 +1,9 @@
 .nav-site {
     display: flex;
     flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -16,17 +19,20 @@
 }
 
 .nav-site__element {
-    display: flex;
-    justify-content: space-between;
     border-bottom: #E8E8E8 solid 1px;
-    padding-bottom: 19px;
-    margin-bottom: 20px;
-    text-decoration: none;
 }
 
 .nav-site__element:last-child {
     margin-bottom: 0;
     border-bottom: none;
+}
+
+.nav-site__element_link {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 19px;
+    margin-bottom: 20px;
 }
 
 .nav-site__text {

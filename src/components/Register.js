@@ -4,7 +4,7 @@ import headerLogo from '../images/logoS.svg';
 
 function Register() {
     return (
-        <div className="result-form">
+        <section className="result-form">
             <Link to='/'><img className="logo logo_center" src={headerLogo} alt="Логотип сайта"/></Link>
             <h1 className="result-form__title">Добро пожаловать!</h1>
             <form className="form">
@@ -24,7 +24,7 @@ function Register() {
             <p className="result-form__subtitle">Уже зарегистрированы?
                 <Link to="/signin" className="result-form__subtitle-link hover-style">Войти</Link>
             </p>
-        </div>
+        </section>
     );
 }
 

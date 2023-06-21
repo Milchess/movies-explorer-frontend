@@ -4,7 +4,7 @@ import './AboutProject.css';
 
 function AboutProject(props) {
     return (
-        <div ref={props.innerRef} className='section-landing'>
+        <section ref={props.innerRef} className='section-landing'>
             <h2 className='section-landing__title'>О проекте</h2>
             <div className='project-box'>
                 <div className='project-box__text'>
@@ -31,7 +31,7 @@ function AboutProject(props) {
                     <p className='project-time__line-text-front'>Front-end</p>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

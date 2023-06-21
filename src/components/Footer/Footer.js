@@ -5,14 +5,19 @@ import './Footer.css';
 
 function Footer() {
     return (
-        <footer className='footer'>
-            <p className='footer__text'>Учебный проект Яндекс.Практикум x BeatFilm.</p>
-            <div className='footer__author'>
-                <p className='footer__copyright'>&copy; 2023</p>
-                <div className='footer__link'>
-                    <Link to={{ pathname: 'https://practicum.yandex.ru/' }} className='footer__link-text hover-style' target='_blank'>Яндекс.Практикум</Link>
-                    <Link to={{ pathname: 'https://github.com/' }} className='footer__link-text hover-style' target='_blank'>Github</Link>
-                </div>
+        <footer className="footer">
+            <p className="footer__text">Учебный проект Яндекс.Практикум x BeatFilm.</p>
+            <div className="footer__author">
+                <p className="footer__copyright">&copy; 2023</p>
+                <ul className="footer__link">
+                    <Link to={{ pathname: 'https://practicum.yandex.ru/' }} target="_blank" className="footer__link-text hover-style">
+                        <li>Яндекс.Практикум</li>
+                    </Link>
+                    <Link to={{ pathname: 'https://github.com/' }} target="_blank"
+                          className="footer__link-text hover-style">
+                        <li>Github</li>
+                    </Link>
+                </ul>
             </div>
         </footer>
     );

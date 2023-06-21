@@ -7,7 +7,7 @@ import './MenuBurger.css';
 
 function MenuBurger(props) {
     return (
-        <div className={`menu ${props.isMenuOpen ? 'menu_opened' : ''}`}>
+        <section className={`menu ${props.isMenuOpen ? 'menu_opened' : ''}`}>
             <div className="exit-menu">
                 <button className="exit-menu__btn" type="button">
                     <img src={ExitMenu} className="exit-menu__btn-img hover-style" alt="Кнопка закрытия"
@@ -36,7 +36,7 @@ function MenuBurger(props) {
                     </Link>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

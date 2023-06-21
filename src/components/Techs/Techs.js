@@ -4,7 +4,7 @@ import './Techs.css';
 
 function Techs(props) {
     return (
-        <div ref={props.innerRef} className='section-landing section-landing_grey'>
+        <section ref={props.innerRef} className='section-landing section-landing_grey'>
             <h2 className='section-landing__title'>Технологии</h2>
             <div className='technologies-box'>
                 <p className='technologies-box__title'>7 технологий</p>
@@ -21,7 +21,7 @@ function Techs(props) {
                 <li className='technologies-list__element'>Express.js</li>
                 <li className='technologies-list__element'>mongoDB</li>
             </ul>
-        </div>
+        </section>
     )
 }
 
