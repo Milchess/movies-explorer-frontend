@@ -1,19 +1,22 @@
 import React from 'react';
 import './NavTab.css';
+import { HashLink } from 'react-router-hash-link';
 
 function NavTab() {
     return (
-        <ul className="landing-nav">
-            <li>
-                <a href='#about-project' className="landing-nav__text hover-style">О проекте</a>
-            </li>
-            <li>
-                <a href='#techs' className="landing-nav__text hover-style">Технологии</a>
-            </li>
-            <li>
-                <a href='#about-me' className="landing-nav__text hover-style">Студент</a>
-            </li>
-        </ul>
+        <nav>
+            <ul className="landing-nav">
+                <li>
+                    <HashLink  to="#about-project" relative="id" className="landing-nav__text hover-style">О проекте</HashLink>
+                </li>
+                <li>
+                    <HashLink to="#techs" className="landing-nav__text hover-style">Технологии</HashLink>
+                </li>
+                <li>
+                    <HashLink to="#about-me" className="landing-nav__text hover-style">Студент</HashLink>
+                </li>
+            </ul>
+        </nav>
     );
 }
 

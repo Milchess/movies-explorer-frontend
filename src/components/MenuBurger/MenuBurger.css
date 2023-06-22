@@ -9,12 +9,14 @@
     z-index: 1;
     visibility: hidden;
     box-sizing: border-box;
+    display: none;
 }
 
 .menu_opened {
     visibility: visible;
     opacity: 1;
     transition: visibility .3s, opacity .3s ease;
+    display: flex;
 }
 
 .exit-menu {
@@ -124,8 +126,9 @@
     align-items: center;
     max-width: 100px;
     max-height: 32px;
-    margin-top: 412px;
+    margin-top: 599px;
     text-decoration: none;
+    padding: 5px 8px 5px 10px;
 }
 
 @media screen and (max-width: 320px) {
@@ -141,8 +144,6 @@
     font-size: 13px;
     line-height: 12px;
     color: #000000;
-    padding-right: 8px;
-    padding-left: 10px;
 }
 
 .main-account__icon {

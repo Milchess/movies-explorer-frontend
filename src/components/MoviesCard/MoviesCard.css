@@ -3,7 +3,6 @@
     background: #FDFDFD;
     box-shadow: 0 4px 30px rgba(0, 0, 0, .08);
     border-radius: 6px;
-    max-width: 100%;
 }
 
 .grid-card__container {
@@ -11,10 +10,28 @@
     flex-direction: column;
     margin: 0;
     text-decoration: none;
+    width: 355px;
+}
+
+.grid-card__container:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .grid-card__container {
+        width: 339px;
+    }
+}
+
+@media screen and (max-width: 735px) {
+    .grid-card__container {
+        width: 300px;
+    }
 }
 
 .grid-card__image {
     height: 203px;
+    width: 100%;
     object-fit: cover;
     border-radius: 6px;
 }
@@ -36,6 +53,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 16px 25px 16px 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .grid-card__item {
+        padding-top: 11px;
+    }
 }
 
 @media screen and (max-width: 320px) {

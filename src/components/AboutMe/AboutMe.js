@@ -19,7 +19,8 @@ function AboutMe() {
                         Люблю играть в компьютерные игры и читать книги. С 2014 года работала в ВУЗе. Год назад
                         захотела
                         писать
-                        код и ушла с предыдущей работы.</p>
+                        код и ушла с предыдущей работы. С тех пор изучаю разработку сайтов, совершенствую код который пишу.
+                    </p>
                     <Link to={{ pathname: 'https://github.com/Milchess' }} className='link-github hover-style' target='_blank'>Github</Link>
                 </div>
                 <img src={photoStudent} className='portfolio__photo' alt='Фото студента'/>

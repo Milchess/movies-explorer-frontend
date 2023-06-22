@@ -4,13 +4,13 @@ import './FilterCheckbox.css';
 
 function FilterCheckbox() {
     return (
-        <form className="switch-box">
-            <label className="switch hover-style">
-                <input className="switch__checkbox" type="checkbox"/>
-                <span className="switch__slider"></span>
+        <section className="switch-box">
+            <label className="switch-box__form hover-style">
+                <input className="switch-box__form-checkbox" type="checkbox"/>
+                <span className="switch-box__form-slider"></span>
             </label>
             <p className="switch-box__text">Короткометражки</p>
-        </form>
+        </section>
     );
 }
 

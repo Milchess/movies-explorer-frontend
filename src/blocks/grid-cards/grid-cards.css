@@ -17,10 +17,10 @@
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 655px) {
     .grid-cards {
         grid-template-columns: repeat(1, 300px);
-        gap: 15px;
+        gap: 17px;
         padding: 0 10px;
     }
 }

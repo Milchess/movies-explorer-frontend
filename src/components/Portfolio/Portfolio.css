@@ -8,25 +8,33 @@
 
 @media screen and (max-width: 768px) {
     .nav-site {
-        margin-bottom: 112px;
+        margin-bottom: 128px;
     }
 }
 
 @media screen and (max-width: 320px) {
     .nav-site {
-        margin-bottom: 91px;
+        margin-bottom: 108px;
     }
+}
+
+.nav-site__elements{
+    margin-bottom: 20px;
+}
+.nav-site__elements:last-child {
+    margin-bottom: 0;
 }
 
 .nav-site__element {
     text-decoration: none;
-    padding-bottom: 19px;
 }
 
 .nav-site__element_link {
     border-bottom: #E8E8E8 solid 1px;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 19px;
+    text-decoration: none;
 }
 
 .nav-site__text {

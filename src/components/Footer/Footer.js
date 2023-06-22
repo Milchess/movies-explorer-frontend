@@ -5,7 +5,7 @@ import './Footer.css';
 
 function Footer(props) {
     return (
-        <footer className={`footer ${props.isMain && 'footer_main'}`}>
+        <footer className='footer'>
             <p className={`footer__text ${props.isMain && 'footer__text_main'}`}>Учебный проект Яндекс.Практикум x BeatFilm.</p>
             <div className="footer__author">
                 <p className="footer__copyright">&copy; 2023</p>

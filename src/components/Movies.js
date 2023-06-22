@@ -6,9 +6,9 @@ import '../index.css';
 
 function Movies() {
     return (
-        <>
+        <main>
             <SearchForm/>
-            <div className='elements'>
+            <section className='elements'>
                 <ul className='grid-cards'>
                     <MoviesCard
                         isMySave={false}
@@ -16,9 +16,9 @@ function Movies() {
                         linkMovies={'https://www.kinopoisk.ru/film/1302273/'}
                     />
                 </ul>
-            </div>
+            </section>
             <BoxMore/>
-        </>
+        </main>
     );
 }
 

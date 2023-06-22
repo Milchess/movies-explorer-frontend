@@ -106,6 +106,7 @@
     color: #000000;
     mix-blend-mode: normal;
     margin: 0;
+    height: 100%;
 }
 
 @media screen and (max-width: 768px) {
@@ -131,18 +132,12 @@
     line-height: 17px;
     color: #000000;
     text-decoration: none;
-    margin-top: 120px;
-}
-
-@media screen and (max-width: 768px) {
-    .link-github {
-        margin-top: 123px;
-    }
+    width: 110px;
 }
 
 @media screen and (max-width: 455px) {
     .link-github {
-        margin-top: 57px;
+        margin-top: 25px;
     }
 }
 
@@ -194,6 +189,7 @@
     mix-blend-mode: normal;
     text-decoration: none;
     margin-bottom: 50px;
+    width: 110px;
 }
 
 @media screen and (max-width: 455px) {

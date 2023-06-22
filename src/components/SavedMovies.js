@@ -5,7 +5,7 @@ import BoxMore from './BoxMore/BoxMore';
 
 function SavedMovies() {
     return (
-        <>
+        <main>
             <SearchForm/>
             <div className='line-box'></div>
             <div className='elements'>
@@ -20,7 +20,7 @@ function SavedMovies() {
             <BoxMore
                 isSaveMovies={true}
             />
-        </>
+        </main>
     );
 }
 

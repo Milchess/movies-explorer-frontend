@@ -1,4 +1,4 @@
-.result-form__btn {
+.form__btn-result {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -10,21 +10,30 @@
     background: #2BE080;
     border: none;
     padding: 13px;
-    margin: 0 0 16px;
+    margin: 159px 0 16px;
 }
 
 @media screen and (max-width: 768px) {
-    .result-form__btn {
-        margin-top: 0;
+    .form__btn-result {
         padding: 15px;
     }
 }
 
 @media screen and (max-width: 440px) {
-    .result-form__btn {
+    .form__btn-result {
         font-size: 12px;
         line-height: 15px;
-        margin-top: 87px;
         margin-bottom: 14px;
+        margin-top: 247px;
+    }
+}
+
+.form__btn-result_signup {
+    margin-top: 60px;
+}
+
+@media screen and (max-width: 320px) {
+    .form__btn-result_signup {
+        margin-top: 147px;
     }
 }

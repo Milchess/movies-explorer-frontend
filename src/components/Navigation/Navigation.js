@@ -7,7 +7,7 @@ import BurgerMenu from '../../images/burgerMenu.svg';
 
 function Navigation(props) {
     return (
-        <section className="nav">
+        <nav className="nav">
             <ul className="nav__profile">
                 <NavLink to="/movies"
                          className={useCallback((isActive) => `nav__text hover-style ${isActive ? 'nav__text_active' : ''}`, [])}>
@@ -19,13 +19,13 @@ function Navigation(props) {
                 </NavLink>
             </ul>
             <Link to="/profile" className="account hover-style">
-                <h3 className="account__text">Аккаунт</h3>
+                <span className="account__text">Аккаунт</span>
                 <img className="account__icon" src={AccountIcon} alt="Значок профиля"/>
             </Link>
             <button className="burger-menu hover-style" type="button" onClick={props.onButtonClick}>
                 <img className="burger-menu__img" src={BurgerMenu} alt="Меню бургера"/>
             </button>
-        </section>
+        </nav>
     );
 }
 
