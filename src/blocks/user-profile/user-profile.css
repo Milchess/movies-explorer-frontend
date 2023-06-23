@@ -1,0 +1,17 @@
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .user-profile {
+        margin-top: 162px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .user-profile {
+        margin-top: 0;
+    }
+}

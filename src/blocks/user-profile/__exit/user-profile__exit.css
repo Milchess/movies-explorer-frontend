@@ -1,0 +1,19 @@
+.user-profile__exit {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #EE3465;
+    border: none;
+    background-color: #FFFFFF;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 465px) {
+    .user-profile__exit {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}

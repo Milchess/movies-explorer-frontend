@@ -1,0 +1,9 @@
+.form__btn-result_profile {
+    margin-top: 203px;
+}
+
+@media screen and (max-width: 320px) {
+    .form__btn-result_profile {
+        margin-top: 370px;
+    }
+}

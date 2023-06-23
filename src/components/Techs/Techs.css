@@ -1,0 +1,120 @@
+.technologies-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 90px 0 100px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .technologies-box {
+        margin-bottom: 83px;
+        margin-top: 80px;
+    }
+}
+
+@media screen and (max-width: 455px) {
+    .technologies-box {
+        margin-bottom: 52px;
+        margin-top: 61px;
+    }
+}
+
+.technologies-box__title {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: #000000;
+    max-width: 600px;
+    margin: 0 0 26px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .technologies-box__title {
+        margin-bottom: 23px;
+    }
+}
+
+@media screen and (max-width: 455px) {
+    .technologies-box__title {
+        font-size: 30px;
+        line-height: 36px;
+    }
+}
+
+.technologies-box__subtitle {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: #000000;
+    max-width: 460px;
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .technologies-box__subtitle {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+@media screen and (max-width: 455px) {
+    .technologies-box__subtitle {
+        font-size: 11px;
+        line-height: 16px;
+    }
+}
+
+.technologies-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    gap: 10px
+}
+
+@media screen and (max-width: 768px) {
+    .technologies-list {
+        margin-bottom: 90px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .technologies-list {
+        display: grid;
+        grid-template-columns: repeat(2, 84px);
+        gap: 12px 10px;
+        margin-bottom: 70px;
+    }
+}
+
+.technologies-list__element {
+    background: #E8E8E8;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: #000000;
+    width: 90px;
+    padding: 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .technologies-list__element {
+        font-size: 12px;
+        line-height: 15px;
+        width: 84px;
+    }
+}

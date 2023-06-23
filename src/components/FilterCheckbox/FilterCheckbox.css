@@ -1,0 +1,92 @@
+.switch-box {
+    display: flex;
+    margin: 27px 0 0 70px;
+}
+
+@media screen and (max-width: 771px) {
+    .switch-box {
+        margin-left: 30px;
+        margin-top: 25px;
+        padding-bottom: 51px;
+        max-width: 708px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .switch-box {
+        margin-left: 14px;
+        margin-top: 32px;
+        padding-bottom: 62px;
+        max-width: 288px;
+    }
+}
+
+.switch-box__form {
+    --circle: 16px; /*-- размер кружка в переключателе --*/
+    --disabled-color: #A0A0A0; /*-- неактивный цвет --*/
+    --enabled-color: #FFFFFF; /*-- активный цвет --*/
+
+    position: relative;
+    display: inline-block;
+    width: calc(var(--circle) * (0.1538 * 2) + var(--circle) * 2);
+    height: calc(var(--circle) * (0.1538 * 2) + var(--circle));
+    box-shadow: 0 4px 4px rgba(50, 50, 71, 0.08), 0 4px 8px rgba(50, 50, 71, 0.06);
+    border-radius: 16px;
+}
+
+.switch-box__form .switch-box__form-checkbox {
+    display: none;
+}
+
+.switch-box__form .switch-box__form-checkbox:checked + .switch-box__form-slider {
+    background-color: var(--enabled-color);
+}
+
+.switch-box__form .switch-box__form-checkbox:focus + .switch-box__form-slider {
+    box-shadow: 0 0 1px var(--enabled-color);
+}
+
+.switch-box__form .switch-box__form-checkbox:checked + .switch-box__form-slider:before {
+    transform: translateX(var(--circle));
+}
+
+.switch-box__form-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--disabled-color);
+    border-radius: calc(var(--circle) * (0.1538 * 2) + var(--circle));
+    cursor: pointer;
+    transition: .4s;
+}
+
+.switch-box__form-slider:before {
+    position: absolute;
+    content: "";
+    height: var(--circle);
+    width: var(--circle);
+    left: calc(var(--circle) * 0.1538);
+    bottom: calc(var(--circle) * 0.1538);
+    background-color: #2BE080;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+.switch-box__text {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #000000;
+    margin: 0 0 0 13px;
+}
+
+@media screen and (max-width: 320px) {
+    .switch-box__text {
+        font-size: 11px;
+        line-height: 18px;
+    }
+}

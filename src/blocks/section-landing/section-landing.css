@@ -1,0 +1,17 @@
+.section-landing {
+    display: flex;
+    flex-direction: column;
+    padding: 110px 70px 109px;
+}
+
+@media screen and (max-width: 768px) {
+    .section-landing {
+        padding: 0 50px 0;
+    }
+}
+
+@media screen and (max-width: 455px) {
+    .section-landing {
+        padding: 0 17px 0;
+    }
+}

@@ -1,0 +1,15 @@
+.logo_center {
+    margin: 70px 0 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .logo_center {
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .logo_center {
+        margin: 0 0 47px 111px;
+    }
+}
