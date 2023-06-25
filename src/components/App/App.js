@@ -13,6 +13,7 @@ import Profile from '../Profile';
 import SavedMovies from '../SavedMovies';
 import MenuBurger from '../MenuBurger/MenuBurger';
 import mainApi from '../../utils/MainApi';
+import ProtectedRoute from '../../ProtectedRoute';
 
 export default function App() {
     const [isMenuOpen, toggleMenu] = useState(false);
@@ -42,7 +43,7 @@ export default function App() {
             mainApi.getValidationToken()
                 .then(() => {
                     setLoggedIn(true);
-                    //history.push('/');
+                    history.push('/');
                 })
                 .catch(err => {
                     console.log(`Ошибка.....: ${err}`);
@@ -118,54 +119,39 @@ export default function App() {
                         />
                     </Route>
 
-                    <Route path='/movies'>
-                        <MenuBurger
-                            handlerClickClose={toggleMenuMode}
-                            isMenuOpen={isMenuOpen}
-                        />
-                        <Header
-                            onButtonClick={toggleMenuMode}
-                        />
-                        <Movies
-                            onSearch={handleSearch}/>
-                        <Footer/>
-                    </Route>
+                    <ProtectedRoute
+                        path='/movies'
+                        component={Movies}
+                        onSearch={handleSearch}
+                        handlerClickClose={toggleMenuMode}
+                        isMenuOpen={isMenuOpen}
+                        loggedIn={loggedIn}
+                    />
 
-                    <Route path='/saved-movies'>
-                        <MenuBurger
-                            handlerClickClose={toggleMenuMode}
-                            isMenuOpen={isMenuOpen}
-                        />
-                        <Header
-                            onButtonClick={toggleMenuMode}
-                        />
-                        <SavedMovies/>
-                        <Footer/>
-                    </Route>
+                    <ProtectedRoute
+                        path='/saved-movies'
+                        component={SavedMovies}
+                        onSearch={handleSearch}
+                        handlerClickClose={toggleMenuMode}
+                        isMenuOpen={isMenuOpen}
+                        loggedIn={loggedIn}
+                    />
 
-                    <Route path='/profile'>
-                        <MenuBurger
-                            handlerClickClose={toggleMenuMode}
-                            isMenuOpen={isMenuOpen}
-                        />
-                        <Header
-                            onButtonClick={toggleMenuMode}
-                        />
-                        <Profile
-                            onButtonClick={toggleEditProfileMode}
-                            isEditProfile={isEditProfile}
-                        />
-                    </Route>
+                    <ProtectedRoute
+                        path='/profile'
+                        component={Profile}
+                        onSearch={handleSearch}
+                        handlerClickClose={toggleMenuMode}
+                        isMenuOpen={isMenuOpen}
+                        loggedIn={loggedIn}
+                        onButtonClick={toggleEditProfileMode}
+                        isEditProfile={isEditProfile}
+                    />
 
                     <Route>
                         <ErrorPage/>
                     </Route>
-
-                    <Route path=''>
-                        <Redirect to='/'/>
-                    </Route>
                 </Switch>
-
             </div>
         </CurrentUserContext.Provider>
     );

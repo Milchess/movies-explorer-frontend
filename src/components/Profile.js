@@ -3,6 +3,8 @@ import '../index.css';
 import { Link } from 'react-router-dom';
 import useFormValidation from './FormValidator';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
+import MenuBurger from './MenuBurger/MenuBurger';
+import Header from './Header/Header';
 
 function Profile(props) {
     const { name, email } = useContext(CurrentUserContext);
@@ -22,6 +24,13 @@ function Profile(props) {
 
     return (
         <main>
+            <MenuBurger
+                handlerClickClose={props.onButtonClick}
+                isMenuOpen={props.isMenuOpen}
+            />
+            <Header
+                onButtonClick={props.onButtonClick}
+            />
             <section className="user-profile">
                 <h1 className="user-profile__title">{`Привет, ${name}!`}</h1>
                 <form className="form form_result" onSubmit={handleSubmit}>

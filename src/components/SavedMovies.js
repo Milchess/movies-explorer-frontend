@@ -2,11 +2,23 @@ import React from 'react';
 import SearchForm from './SearchForm/SearchForm';
 import MoviesCard from './MoviesCard/MoviesCard';
 import BoxMore from './BoxMore/BoxMore';
+import MenuBurger from './MenuBurger/MenuBurger';
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
 
-function SavedMovies() {
+function SavedMovies(props) {
     return (
         <main>
-            <SearchForm/>
+            <MenuBurger
+                handlerClickClose={props.onButtonClick}
+                isMenuOpen={props.isMenuOpen}
+            />
+            <Header
+                onButtonClick={props.onButtonClick}
+            />
+            <SearchForm
+                onSearch={props.onSearch}
+            />
             <div className='line-box'></div>
             <div className='elements'>
                 <ul className='grid-cards'>
@@ -20,6 +32,7 @@ function SavedMovies() {
             <BoxMore
                 isSaveMovies={true}
             />
+            <Footer/>
         </main>
     );
 }
