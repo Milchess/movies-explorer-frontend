@@ -1,29 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import headerLogo from '../images/logoS.svg';
 import { withRouter } from 'react-router-dom';
+import useFormValidation from './FormValidator';
 
 function Register(props) {
-    const[password, setPassword] = useState('');
-    const[email, setEmail] = useState('');
-    const[name, setName] = useState('');
-
-    function handleChangePassword(e) {
-        setPassword(e.target.value);
-    }
-
-    function handleChangeEmail(e) {
-        setEmail(e.target.value);
-    }
-
-    function handleChangeName(e) {
-        setName(e.target.value);
-    }
+    const { values, handleChange, errors, isValid } = useFormValidation();
 
     function handleSubmit(e) {
         e.preventDefault();
 
-        props.onRegistry({name, password, email});
+        props.onRegistry(values);
     }
 
     return (
@@ -31,40 +18,46 @@ function Register(props) {
             <section className="result-form">
                 <Link to="/"><img className="logo logo_center hover-style" src={headerLogo} alt="Логотип сайта"/></Link>
                 <h1 className="result-form__title">Добро пожаловать!</h1>
-                <form className="form">
+                <form className="form" onSubmit={handleSubmit}>
                     <label className="form__label">Имя</label>
                     <input
                         className="form__input"
                         type="text"
                         required
+                        name='name'
                         minLength='2'
                         maxLength='30'
-                        placeholder="имя"
-                        onChange={handleChangeName}/>
-                    <span className="form__error"></span>
+                        placeholder='Введите ваше имя'
+                        onChange={handleChange}/>
+                    <span className="form__error">{errors.name}</span>
                     <label className="form__label">E-mail</label>
                     <input
                         className="form__input"
                         type="email"
                         required
+                        name='email'
                         minLength='2'
                         maxLength='30'
-                        placeholder="e-mail"
-                        onChange={handleChangeEmail}/>
-                    <span className="form__error"></span>
+                        placeholder='Введите вашу электронную почту'
+                        onChange={handleChange}/>
+                    <span className="form__error">{errors.email}</span>
                     <label className="form__label">Пароль</label>
                     <input
                         className="form__input"
                         type="password"
+                        name='password'
                         required
                         minLength='2'
                         maxLength='30'
                         placeholder="пароль"
-                        onChange={handleChangePassword}/>
-                    <span className="form__error">Что-то пошло не так...</span>
-                    <button className="form__btn-result form__btn-result_signup hover-style" aria-label="Зарегистрироваться"
-                            type="submit" onClick={handleSubmit}>Зарегистрироваться
-                    </button>
+                        onChange={handleChange}/>
+                    <span className="form__error">{errors.password}</span>
+                    <button
+                        className="form__btn-result form__btn-result_signup hover-style"
+                        aria-label="Зарегистрироваться"
+                        type="submit"
+                        disabled={!isValid}
+                    >Зарегистрироваться</button>
                 </form>
                 <p className="result-form__subtitle">Уже зарегистрированы?
                     <Link to="/signin" className="result-form__subtitle-link hover-style">Войти</Link>

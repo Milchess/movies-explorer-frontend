@@ -19,24 +19,33 @@ export default function App() {
     const [isEditProfile, toggleEditProfile] = useState(true);
     const [currentUser, setCurrentUser] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
-    const [email, setEmail] = useState(null);
     const [isInfoTooltipOpen, setIsInfoTooltipOpen] = useState(false);
     const [tooltipStatus, setTooltipStatus] = useState('success');
 
     const history = useHistory();
 
     useEffect(validAuth, []);
+    useEffect(() => {
+        //TODO исправить ошибку после регистрации
+        if (loggedIn)
+            Promise.all([mainApi.getUserInformation()])
+                .then(([user]) => {
+                    setCurrentUser(user);
+                })
+                .catch(err => {
+                    console.log(`Ошибка.....: ${err}`)
+                });
+    }, [loggedIn]);
 
     function validAuth() {
         if (localStorage.getItem('token')) {
             mainApi.getValidationToken()
-                .then((res) => {
+                .then(() => {
                     setLoggedIn(true);
-                    setEmail(res.data.email);
-                    history.push('/');
+                    //history.push('/');
                 })
                 .catch(err => {
-                    console.log(`Ошибка.....: ${err}`)
+                    console.log(`Ошибка.....: ${err}`);
                 });
         }
     }
@@ -45,9 +54,8 @@ export default function App() {
         mainApi.getAuthorization(model)
             .then((data) => {
                 setLoggedIn(true);
-                setEmail(model.email);
                 localStorage.setItem('token', data.token);
-                history.push('/');
+                history.push('/movies');
             })
             .catch(err => {
                 handleInfoTooltip();
@@ -59,13 +67,21 @@ export default function App() {
     function handleSignUp(model) {
         mainApi.setRegistration(model)
             .then(() => {
+                const modelSignIn = {
+                    email: model.email,
+                    password: model.password
+                };
                 setTooltipStatus('success');
-                history.push('/signin');
+                handleSignIn(modelSignIn)
             })
             .catch(err => {
                 setTooltipStatus('fail');
                 console.log(`Ошибка.....: ${err}`)
             }).finally(handleInfoTooltip);
+    }
+
+    function handleSearch(model) {
+        console.log(model);
     }
 
     function handleInfoTooltip() {
@@ -110,7 +126,8 @@ export default function App() {
                         <Header
                             onButtonClick={toggleMenuMode}
                         />
-                        <Movies/>
+                        <Movies
+                            onSearch={handleSearch}/>
                         <Footer/>
                     </Route>
 

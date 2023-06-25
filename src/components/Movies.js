@@ -4,10 +4,11 @@ import MoviesCard from './MoviesCard/MoviesCard';
 import BoxMore from './BoxMore/BoxMore';
 import '../index.css';
 
-function Movies() {
+function Movies(props) {
     return (
         <main>
-            <SearchForm/>
+            <SearchForm
+                onSearch={props.onSearch}/>
             <section className='elements'>
                 <ul className='grid-cards'>
                     <MoviesCard
