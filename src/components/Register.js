@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import headerLogo from '../images/logoS.svg';
 import { withRouter } from 'react-router-dom';
 import useFormValidation from './FormValidator';
+import { regexEMail, regexName } from '../constant';
 
 function Register(props) {
     const { values, handleChange, errors, isValid } = useFormValidation();
@@ -27,6 +28,7 @@ function Register(props) {
                         name='name'
                         minLength='2'
                         maxLength='30'
+                        pattern={regexName}
                         placeholder='Введите ваше имя'
                         onChange={handleChange}/>
                     <span className="form__error">{errors.name}</span>
@@ -38,6 +40,7 @@ function Register(props) {
                         name='email'
                         minLength='2'
                         maxLength='30'
+                        pattern={regexEMail}
                         placeholder='Введите вашу электронную почту'
                         onChange={handleChange}/>
                     <span className="form__error">{errors.email}</span>

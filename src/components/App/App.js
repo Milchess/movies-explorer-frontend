@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import {CurrentUserContext} from '../../contexts/CurrentUserContext';
 import HeaderMain from '../HeaderMain/HeaderMain';
-import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Login from '../Login';
 import Register from '../Register';
@@ -11,7 +10,6 @@ import Main from '../Main/Main';
 import Movies from '../Movies';
 import Profile from '../Profile';
 import SavedMovies from '../SavedMovies';
-import MenuBurger from '../MenuBurger/MenuBurger';
 import mainApi from '../../utils/MainApi';
 import ProtectedRoute from '../../ProtectedRoute';
 

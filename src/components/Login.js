@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import headerLogo from '../images/logoS.svg';
 import { withRouter } from 'react-router-dom';
 import useFormValidation from './FormValidator';
+import { regexEMail } from '../constant';
 
 function Login(props) {
     const { values, handleChange, errors, isValid } = useFormValidation();
@@ -24,6 +25,7 @@ function Login(props) {
                         className="form__input"
                         type="email"
                         name="email"
+                        pattern={regexEMail}
                         required
                         minLength='2'
                         maxLength='30'

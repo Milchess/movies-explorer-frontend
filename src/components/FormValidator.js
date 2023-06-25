@@ -19,9 +19,9 @@ function useFormValidation() {
 
         setErrors({ ...errors, [name]: validationMessage });
 
-        if (value.length < 2 || value.length > 30 ) {
+        if (value.trim().length < 2 || value.trim().length > 30 ) {
             setErrors({ ...errors, [name]: lengthErrorMessage });
-        } else if (value.length === 0) {
+        } else if (value.trim().length === 0) {
             setErrors({...errors, [name]: emptyErrorMessage });
         }
 

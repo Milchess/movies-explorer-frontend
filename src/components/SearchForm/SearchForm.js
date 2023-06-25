@@ -32,6 +32,7 @@ function SearchForm(props) {
                 </div>
                 <FilterCheckbox
                     handleChange={handleChange}/>
+                <span className='form__error'>{errors.search}</span>
             </form>
         </section>
     )
