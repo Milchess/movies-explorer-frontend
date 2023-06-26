@@ -8,7 +8,7 @@ import NavigationNotAuthorized from '../NavigationNotAuthorized';
 
 function Header(props) {
     return (
-        <header className='header'>
+        <header className={`header ${props.isMain && 'header_main'}`}>
             <Link to='/'><img className='logo hover-style' src={headerLogo} alt='Логотип сайта'/></Link>
 {/*            props.loggedIn
             ? <NavigationNotAuthorized />

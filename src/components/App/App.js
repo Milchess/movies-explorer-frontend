@@ -113,6 +113,7 @@ export default function App() {
                         <Header
                             loggedIn={loggedIn}
                             onButtonClick={toggleEditProfileMode}
+                            isMain={true}
                         />
                         <Main/>
                         <Footer
