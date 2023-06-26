@@ -4,7 +4,7 @@ import '../../index.css';
 
 function PopupError() {
     return (
-        <div className='popup-error'>
+        <section className='popup-error'>
             <div className="popup-error__container">
                 <p className="popup-error__text">Ошибка</p>
                 <button
@@ -12,7 +12,7 @@ function PopupError() {
                     className="popup-error__btn-close hover-style"
                     type="button">Закрыть</button>
             </div>
-        </div>
+        </section>
     )
 }
 
