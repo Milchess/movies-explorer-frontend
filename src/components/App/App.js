@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import {CurrentUserContext} from '../../contexts/CurrentUserContext';
-import HeaderMain from '../HeaderMain/HeaderMain';
 import Footer from '../Footer/Footer';
 import Login from '../Login';
 import Register from '../Register';
@@ -12,6 +11,7 @@ import Profile from '../Profile';
 import SavedMovies from '../SavedMovies';
 import mainApi from '../../utils/MainApi';
 import ProtectedRoute from '../../ProtectedRoute';
+import Header from '../Header/Header';
 
 export default function App() {
     const [isMenuOpen, toggleMenu] = useState(false);
@@ -110,7 +110,10 @@ export default function App() {
                     </Route>
 
                     <Route exact path='/'>
-                        <HeaderMain/>
+                        <Header
+                            loggedIn={loggedIn}
+                            onButtonClick={toggleEditProfileMode}
+                        />
                         <Main/>
                         <Footer
                             isMain={true}
