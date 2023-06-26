@@ -44,7 +44,7 @@ function Login(props) {
                         onChange={handleChange}/>
                     <span className="form__error">{errors.password}</span>
                     <button
-                        className="form__btn-result hover-style"
+                        className={`form__btn-result hover-style ${!isValid && 'btn-disabled'}`}
                         aria-label="Войти"
                         type="submit"
                         disabled={!isValid}

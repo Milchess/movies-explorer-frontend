@@ -6,17 +6,17 @@ import AccountIcon from '../../images/iconProfile.svg';
 import BurgerMenu from '../../images/burgerMenu.svg';
 
 function Navigation(props) {
-    const classNameText = `nav__text hover-style ${ props.isMain ? 'nav__text_main' : '' }`
+    const classNameText = `nav__text hover-style ${ props.isMain && 'nav__text_main'}`
 
     return (
         <nav className="nav">
             <ul className="nav__profile">
                 <NavLink to="/movies"
-                         className={useCallback((isActive) => `${classNameText} ${isActive ? 'nav__text_active' : ''}`, [])}>
+                         className={useCallback((isActive) => `${classNameText} ${isActive && 'nav__text_active'}`, [classNameText])}>
                     <li>Фильмы</li>
                 </NavLink>
                 <NavLink to="/saved-movies"
-                         className={useCallback((isActive) => `${classNameText} ${isActive ? 'nav__text_active' : ''}`, [])}>
+                         className={useCallback((isActive) => `${classNameText} ${isActive && 'nav__text_active'}`, [classNameText])}>
                     <li>Сохранённые фильмы</li>
                 </NavLink>
             </ul>

@@ -56,7 +56,7 @@ function Register(props) {
                         onChange={handleChange}/>
                     <span className="form__error">{errors.password}</span>
                     <button
-                        className="form__btn-result form__btn-result_signup hover-style"
+                        className={`form__btn-result form__btn-result_signup hover-style ${!isValid && 'btn-disabled'}`}
                         aria-label="Зарегистрироваться"
                         type="submit"
                         disabled={!isValid}

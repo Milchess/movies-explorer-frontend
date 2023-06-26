@@ -16,10 +16,13 @@ function Profile(props) {
         e.preventDefault();
 
         if (values.name !== name && values.email !== email) {
-            props.onAuth(values);
+            props.onSubmit({
+                name: values.name ?? name,
+                email: values.email ?? email,
+            });
         } else {
-            //TODO сделать вывод popup с описание ошибки
-            console.log('ничего не изменилось');
+            props.toolTipText('ничего не изменилось');
+            props.onToolTip();
         }
     }
 
@@ -67,7 +70,11 @@ function Profile(props) {
                     </label>
                     <span className="form__error">{errors.email}</span>
                     <button type="submit"
-                            className={`form__btn-result form__btn-result_profile hover-style ${props.isEditProfile && 'style-hidden'}`}
+                            className={`form__btn-result
+                            form__btn-result_profile
+                            hover-style
+                            ${props.isEditProfile && 'style-hidden'}
+                            ${!isValid && 'btn-disabled'}`}
                             disabled={!isValid}
                     >Сохранить</button>
                 </form>
@@ -76,7 +83,7 @@ function Profile(props) {
                             type="button" onClick={props.onButtonClick}>Редактировать
                     </button>
                     <Link to="/" className="user-profile__exit hover-style" aria-label="Выйти из аккаунта"
-                          type="button">Выйти из
+                          type="button" onClick={props.signOut}>Выйти из
                         аккаунта
                     </Link>
                 </div>

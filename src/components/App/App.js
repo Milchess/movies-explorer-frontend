@@ -12,18 +12,19 @@ import SavedMovies from '../SavedMovies';
 import mainApi from '../../utils/MainApi';
 import ProtectedRoute from '../../ProtectedRoute';
 import Header from '../Header/Header';
+import Tooltip from '../Tooltip/Tooltip';
 
 export default function App() {
+    const [loggedIn, setLoggedIn] = useState(false);
     const [isMenuOpen, toggleMenu] = useState(false);
     const [isEditProfile, toggleEditProfile] = useState(true);
     const [currentUser, setCurrentUser] = useState('');
-    const [loggedIn, setLoggedIn] = useState(false);
     const [isInfoTooltipOpen, setIsInfoTooltipOpen] = useState(false);
-    const [tooltipStatus, setTooltipStatus] = useState('success');
+    const [tooltipText, setTooltipText] = useState('');
 
     const history = useHistory();
 
-    useEffect(validAuth, []);
+    useEffect(validAuth, [history]);
     useEffect(() => {
         //TODO исправить ошибку после регистрации
         if (loggedIn)
@@ -41,26 +42,36 @@ export default function App() {
             mainApi.getValidationToken()
                 .then(() => {
                     setLoggedIn(true);
-                    history.push('/');
                 })
                 .catch(err => {
                     console.log(`Ошибка.....: ${err}`);
+                    history.push('/');
                 });
         }
     }
 
     function handleSignIn(model) {
         mainApi.getAuthorization(model)
-            .then((data) => {
+            .then(({ token }) => {
                 setLoggedIn(true);
-                localStorage.setItem('token', data.token);
+                localStorage.setItem('token', token);
                 history.push('/movies');
             })
             .catch(err => {
+                setTooltipText(err);
                 handleInfoTooltip();
-                setTooltipStatus('fail');
-                console.log(`Ошибка.....: ${err}`)
+            });
+    }
+
+    function handleUpdateProfile(model) {
+        mainApi.setUserUpdate(model)
+            .then((data) => {
+                setCurrentUser(data);
+                setTooltipText('Данные успешно изменены');
             })
+            .catch(err => {
+                setTooltipText(err);
+            }).finally(handleInfoTooltip)
     }
 
     function handleSignUp(model) {
@@ -70,12 +81,11 @@ export default function App() {
                     email: model.email,
                     password: model.password
                 };
-                setTooltipStatus('success');
-                handleSignIn(modelSignIn)
+                setTooltipText('Вы успешно зарегистрировались!');
+                handleSignIn(modelSignIn);
             })
             .catch(err => {
-                setTooltipStatus('fail');
-                console.log(`Ошибка.....: ${err}`)
+                setTooltipText(err);
             }).finally(handleInfoTooltip);
     }
 
@@ -83,8 +93,18 @@ export default function App() {
         console.log(model);
     }
 
+    function handleSignOut() {
+        localStorage.removeItem('token');
+        setLoggedIn(false);
+        history.push('/');
+    }
+
     function handleInfoTooltip() {
         setIsInfoTooltipOpen(true);
+    }
+
+    function handleTextTooltip(text) {
+        setTooltipText(text);
     }
 
     function toggleMenuMode() {
@@ -93,6 +113,10 @@ export default function App() {
 
     function toggleEditProfileMode() {
         toggleEditProfile(!isEditProfile);
+    }
+
+    function closeAllPopups() {
+        setIsInfoTooltipOpen(false);
     }
 
     return (
@@ -142,18 +166,27 @@ export default function App() {
                     <ProtectedRoute
                         path='/profile'
                         component={Profile}
+                        onSubmit={handleUpdateProfile}
                         onSearch={handleSearch}
                         handlerClickClose={toggleMenuMode}
                         isMenuOpen={isMenuOpen}
                         loggedIn={loggedIn}
                         onButtonClick={toggleEditProfileMode}
                         isEditProfile={isEditProfile}
+                        signOut={handleSignOut}
+                        onToolTip={handleInfoTooltip}
+                        toolTipText={handleTextTooltip}
                     />
 
                     <Route>
                         <ErrorPage/>
                     </Route>
                 </Switch>
+                <Tooltip
+                    isOpen={isInfoTooltipOpen}
+                    onClose={closeAllPopups}
+                    text={tooltipText}
+                />
             </div>
         </CurrentUserContext.Provider>
     );

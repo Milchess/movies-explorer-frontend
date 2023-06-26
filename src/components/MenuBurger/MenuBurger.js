@@ -7,7 +7,7 @@ import './MenuBurger.css';
 
 function MenuBurger(props) {
     return (
-        <section className={`menu ${props.isMenuOpen ? 'menu_opened' : ''}`}>
+        <section className={`menu ${props.isMenuOpen && 'menu_opened'}`}>
             <div className="exit-menu">
                 <button className="exit-menu__btn" type="button">
                     <img src={ExitMenu} className="exit-menu__btn-img hover-style" alt="Кнопка закрытия"
@@ -21,11 +21,11 @@ function MenuBurger(props) {
                             </li>
                             <li className="main-menu__element">
                                 <NavLink to="/movies"
-                                         className={useCallback((isActive) => `main-menu__link hover-style ${isActive ? 'main-menu__link_active' : ''}`, [])}>Фильмы</NavLink>
+                                         className={useCallback((isActive) => `main-menu__link hover-style ${isActive && 'main-menu__link_active'}`, [])}>Фильмы</NavLink>
                             </li>
                             <li className="main-menu__element">
                                 <NavLink to="/saved-movies"
-                                         className={useCallback((isActive) => `main-menu__link hover-style ${isActive ? 'main-menu__link_active' : ''}`, [])}>Сохранённые
+                                         className={useCallback((isActive) => `main-menu__link hover-style ${isActive && 'main-menu__link_active'}`, [])}>Сохранённые
                                     фильмы</NavLink>
                             </li>
                         </ul>
