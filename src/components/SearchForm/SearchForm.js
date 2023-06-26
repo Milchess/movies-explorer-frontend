@@ -15,7 +15,7 @@ function SearchForm(props) {
 
     return (
         <section className='search'>
-            <form onSubmit={handleSubmit}>
+            <form className='form' onSubmit={handleSubmit}>
                 <div className='input-group'>
                     <input
                         name='search'
@@ -30,9 +30,9 @@ function SearchForm(props) {
                         disabled={!isValid}
                     >Поиск</button>
                 </div>
+                <span className='form__error'>{errors.search}</span>
                 <FilterCheckbox
                     handleChange={handleChange}/>
-                <span className='form__error'>{errors.search}</span>
             </form>
         </section>
     )
