@@ -31,6 +31,7 @@ function Profile(props) {
             />
             <Header
                 onButtonClick={props.onButtonClick}
+                loggedIn={props.loggedIn}
             />
             <section className="user-profile">
                 <h1 className="user-profile__title">{`Привет, ${name}!`}</h1>

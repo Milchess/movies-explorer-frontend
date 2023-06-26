@@ -16,6 +16,7 @@ function Movies(props) {
             />
             <Header
                 onButtonClick={props.onButtonClick}
+                loggedIn={props.loggedIn}
             />
             <SearchForm
                 onSearch={props.onSearch}/>
