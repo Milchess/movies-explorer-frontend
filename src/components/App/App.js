@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import {CurrentUserContext} from '../../contexts/CurrentUserContext';
 import Footer from '../Footer/Footer';
 import Login from '../Login';
@@ -24,31 +24,17 @@ export default function App() {
 
     const history = useHistory();
 
-    useEffect(validAuth, [history]);
     useEffect(() => {
-        //TODO исправить ошибку после регистрации
-        if (loggedIn)
-            Promise.all([mainApi.getUserInformation()])
-                .then(([user]) => {
-                    setCurrentUser(user);
-                })
-                .catch(err => {
-                    console.log(`Ошибка.....: ${err}`)
-                });
-    }, [loggedIn]);
-
-    function validAuth() {
-        if (localStorage.getItem('token')) {
-            mainApi.getValidationToken()
-                .then(() => {
-                    setLoggedIn(true);
-                })
-                .catch(err => {
-                    console.log(`Ошибка.....: ${err}`);
-                    history.push('/');
-                });
-        }
-    }
+        Promise.all([mainApi.getUserInformation()])
+            .then(([user]) => {
+                setLoggedIn(true);
+                setCurrentUser(user);
+            })
+            .catch(err => {
+                setLoggedIn(false);
+                console.log(err);
+            });
+    }, [loggedIn, history]);
 
     function handleSignIn(model) {
         mainApi.getAuthorization(model)
@@ -56,6 +42,7 @@ export default function App() {
                 setLoggedIn(true);
                 localStorage.setItem('token', token);
                 history.push('/movies');
+                history.go('/');
             })
             .catch(err => {
                 setTooltipText(err);
@@ -81,12 +68,13 @@ export default function App() {
                     email: model.email,
                     password: model.password
                 };
-                setTooltipText('Вы успешно зарегистрировались!');
+
                 handleSignIn(modelSignIn);
             })
             .catch(err => {
                 setTooltipText(err);
-            }).finally(handleInfoTooltip);
+            })
+            .finally(handleInfoTooltip);
     }
 
     function handleSearch(model) {
@@ -96,7 +84,7 @@ export default function App() {
     function handleSignOut() {
         localStorage.removeItem('token');
         setLoggedIn(false);
-        history.push('/');
+        history.go('/');
     }
 
     function handleInfoTooltip() {
