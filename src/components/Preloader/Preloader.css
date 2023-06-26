@@ -1,0 +1,56 @@
+.preloader {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+/* стили спиннера начинаются отсюда */
+.preloader-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.preloader-container__spinner {
+    --b:10px;  /* ширина линии */
+    --s:50%; /* размер прозрачной части кольца */
+    --c :#2BE080; /* цвет кольца */
+
+    display: block;
+    width: 130px;
+    position: relative;
+    animation: spinner 2s linear infinite;
+}
+.preloader-container__spinner:after {
+    content:"";
+    display:inline-block;
+    padding-top:100%;
+}
+.preloader-container__spinner:before {
+    content:"";
+    position:absolute;
+    z-index:-1;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    border: var(--b) solid transparent;
+    background: linear-gradient(#fff var(--s), var(--c) 100%) border-box;
+    -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - var(--b) - 1px),#fff calc(100% - var(--b)));
+    mask:radial-gradient(farthest-side,transparent calc(100% - var(--b) - 1px),#fff calc(100% - var(--b)));
+    border-radius:50%;
+}
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
