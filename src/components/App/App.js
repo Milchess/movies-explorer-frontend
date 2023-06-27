@@ -13,6 +13,7 @@ import mainApi from '../../utils/MainApi';
 import ProtectedRoute from '../../ProtectedRoute';
 import Header from '../Header/Header';
 import Tooltip from '../Tooltip/Tooltip';
+import MenuBurger from '../MenuBurger/MenuBurger';
 
 export default function App() {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -122,6 +123,10 @@ export default function App() {
                     </Route>
 
                     <Route exact path='/'>
+                        <MenuBurger
+                            handlerClickClose={props.onButtonClick}
+                            isMenuOpen={props.isMenuOpen}
+                        />
                         <Header
                             loggedIn={loggedIn}
                             onButtonClick={toggleEditProfileMode}
