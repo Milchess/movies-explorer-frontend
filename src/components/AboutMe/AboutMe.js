@@ -25,7 +25,7 @@ function AboutMe() {
                 </div>
                 <img src={photoStudent} className='portfolio__photo' alt='Фото студента'/>
             </div>
-            <Link to={{ pathname: 'https://github.com/Milchess' }} className='portfolio-link hover-style' target='_blank'>Портфолио</Link>
+            <Link to={{ pathname: 'https://github.com/Milchess?tab=repositories' }} className='portfolio-link hover-style' target='_blank'>Портфолио</Link>
             <Portfolio/>
         </section>
     )

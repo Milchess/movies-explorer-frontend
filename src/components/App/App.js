@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import {CurrentUserContext} from '../../contexts/CurrentUserContext';
 import Footer from '../Footer/Footer';
 import Login from '../Login';
