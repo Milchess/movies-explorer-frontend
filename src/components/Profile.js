@@ -29,11 +29,11 @@ function Profile(props) {
     return (
         <main>
             <MenuBurger
-                handlerClickClose={props.onButtonClick}
+                handlerClickClose={props.handlerClickClose}
                 isMenuOpen={props.isMenuOpen}
             />
             <Header
-                onButtonClick={props.onButtonClick}
+                onButtonClick={props.handlerClickClose}
                 loggedIn={props.loggedIn}
             />
             <section className="user-profile">

@@ -124,12 +124,12 @@ export default function App() {
 
                     <Route exact path='/'>
                         <MenuBurger
-                            handlerClickClose={props.onButtonClick}
-                            isMenuOpen={props.isMenuOpen}
+                            handlerClickClose={toggleMenuMode}
+                            isMenuOpen={isMenuOpen}
                         />
                         <Header
                             loggedIn={loggedIn}
-                            onButtonClick={toggleEditProfileMode}
+                            onButtonClick={toggleMenuMode}
                             isMain={true}
                         />
                         <Main/>
