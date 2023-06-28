@@ -27,6 +27,7 @@ export default function App() {
     const [tooltipText, setTooltipText] = useState('');
     const [savedMovies, setSavedMovies] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [isShort, setIsShort] = useState(false);
     const [initialMovies, setInitialMovies] = useState([]);
 
     const history = useHistory();
@@ -87,6 +88,9 @@ export default function App() {
 
     function handleSignOut() {
         localStorage.removeItem('token');
+        localStorage.removeItem('allMovies');
+        localStorage.removeItem('textSearch');
+        localStorage.removeItem('checkedSwitchSearch');
         setLoggedIn(false);
         history.go('/');
     }
@@ -107,33 +111,66 @@ export default function App() {
         setIsInfoTooltipOpen(false);
     }
 
-    function handleSearch({ search, switchBox = false }) {
-        setIsLoading(true);
-        moviesApi.getMovies()
-            .then((data) => {
-                const moviesList = filterMovies(data, search);
-                let isEmptyList = moviesList.length === 0;
+    function handleSearch({
+                              search = document.querySelector('.input-group__search').value,
+                              switchBox = document.querySelector('.switch-box__form-checkbox').checked
+    }) {
+        localStorage.setItem('textSearch', search);
+        localStorage.setItem('checkedSwitchSearch', `${switchBox ? 'on' : 'off'}`);
+        setInitialMovies([]);
 
-                if (switchBox) {
-                    const filterDurationList = filterDuration(moviesList);
-                    isEmptyList = filterDurationList.length === 0;
-                    setInitialMovies(filterDurationList);
-                } else {
-                    setInitialMovies(moviesList);
-                }
+        if (localStorage.getItem('allMovies')) {
+            const movies = JSON.parse(localStorage.getItem('allMovies'));
 
-                if (isEmptyList) {
-                    setTooltipText('Ничего не найдено');
-                    handleInfoTooltip();
-                }
-            })
-            .catch(err => {
-                console.log(err);
-                const text = '«Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз»';
-                setTooltipText(text);
+            setIsShort(switchBox);
+
+            document.querySelector('.input-group__search').defaultValue = search;
+            document.querySelector('.switch-box__form-checkbox').checked = switchBox;
+
+            const moviesList = filterMovies(movies, search);
+            let isEmptyList = moviesList.length === 0;
+
+            if (switchBox) {
+                const filterDurationList = filterDuration(moviesList);
+                isEmptyList = filterDurationList.length === 0;
+                setInitialMovies(filterDurationList);
+            } else {
+                setInitialMovies(moviesList);
+            }
+
+            if (isEmptyList) {
+                setTooltipText('Ничего не найдено');
                 handleInfoTooltip();
-            })
-            .finally(() => setIsLoading(false));
+            }
+        } else {
+            setIsLoading(true);
+            moviesApi.getMovies()
+                .then((data) => {
+                    const moviesList = filterMovies(data, search);
+                    let isEmptyList = moviesList.length === 0;
+                    localStorage.setItem('allMovies', JSON.stringify(data));
+
+                    if (switchBox) {
+                        const filterDurationList = filterDuration(moviesList);
+                        isEmptyList = filterDurationList.length === 0;
+                        setInitialMovies(filterDurationList);
+                    } else {
+                        setInitialMovies(moviesList);
+                    }
+
+                    if (isEmptyList) {
+                        setTooltipText('Ничего не найдено');
+                        handleInfoTooltip();
+                    }
+                })
+                .catch(err => {
+                    console.log(err);
+                    const text = '«Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз»';
+                    setTooltipText(text);
+                    handleInfoTooltip();
+                })
+                .finally(() => setIsLoading(false));
+        }
     }
 
     function handleCardLike(card) {
@@ -199,6 +236,7 @@ export default function App() {
                         onCardDelete={handleCardDelete}
                         handleLikeClick={handleCardLike}
                         movies={initialMovies}
+                        isShort={isShort}
                     />
 
                     <ProtectedRoute
@@ -212,6 +250,7 @@ export default function App() {
                         onCardDelete={handleCardDelete}
                         handleLikeClick={handleCardLike}
                         movies={initialMovies}
+                        isShort={isShort}
                     />
 
                     <ProtectedRoute

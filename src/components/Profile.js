@@ -26,7 +26,7 @@ function Profile(props) {
                 email: values.email ?? email,
             });
         } else {
-            props.toolTipText('ничего не изменилось');
+            props.toolTipText('Ничего не изменилось');
             props.onToolTip();
         }
     }

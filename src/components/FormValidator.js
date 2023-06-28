@@ -8,6 +8,7 @@ function useFormValidation() {
 
     const lengthErrorMessage = "Поле должно быть не менее 2 или не более 30 символов";
     const emptyErrorMessage = "Пожалуйста заполните это поле";
+    const needKeyword = "Нужно ввести ключевое слово";
 
     const handleChange = (event) => {
         const { name, value, validationMessage } = event.target;
@@ -19,10 +20,12 @@ function useFormValidation() {
 
         setErrors({ ...errors, [name]: validationMessage });
 
-        if (value.trim().length < 2 || value.trim().length > 30 ) {
+        if ((value.trim().length < 2 || value.trim().length > 30) && name !== 'search') {
             setErrors({ ...errors, [name]: lengthErrorMessage });
-        } else if (value.trim().length === 0) {
+        } else if (value.trim().length === 0 && name !== 'search') {
             setErrors({...errors, [name]: emptyErrorMessage });
+        } else if (name === 'search' && value.trim().length === 0) {
+            setErrors({...errors, [name]: needKeyword });
         }
 
         setIsValid(event.target.closest('form').checkValidity());
