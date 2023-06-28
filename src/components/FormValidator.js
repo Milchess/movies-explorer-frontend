@@ -12,7 +12,7 @@ function useFormValidation() {
     const handleChange = (event) => {
         const { name, value, validationMessage } = event.target;
 
-        if (name === 'switch')
+        if (name === 'switchBox')
             setValues({ ...values, [name]: event.target.checked });
         else
             setValues({ ...values, [name]: value });

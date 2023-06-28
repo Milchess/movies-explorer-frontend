@@ -6,7 +6,7 @@ import Login from '../Login';
 import Register from '../Register';
 import ErrorPage from '../Error/Error';
 import Main from '../Main/Main';
-import Movies from '../Movies';
+import Movies from '../Movies/Movies';
 import Profile from '../Profile';
 import SavedMovies from '../SavedMovies';
 import mainApi from '../../utils/MainApi';
@@ -14,6 +14,10 @@ import ProtectedRoute from '../../ProtectedRoute';
 import Header from '../Header/Header';
 import Tooltip from '../Tooltip/Tooltip';
 import MenuBurger from '../MenuBurger/MenuBurger';
+import moviesApi from '../../utils/MoviesApi';
+import { filterMovies } from '../../utils/utils';
+import Preloader from '../Preloader/Preloader';
+
 
 export default function App() {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -22,14 +26,18 @@ export default function App() {
     const [currentUser, setCurrentUser] = useState('');
     const [isInfoTooltipOpen, setIsInfoTooltipOpen] = useState(false);
     const [tooltipText, setTooltipText] = useState('');
+    const [savedMovies, setSavedMovies] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [initialMovies, setInitialMovies] = useState([]);
 
     const history = useHistory();
 
     useEffect(() => {
-        Promise.all([mainApi.getUserInformation()])
-            .then(([user]) => {
+        Promise.all([mainApi.getUserInformation(), mainApi.getInitialMovies()])
+            .then(([user, cards]) => {
                 setLoggedIn(true);
                 setCurrentUser(user);
+                setSavedMovies(cards.reverse());
             })
             .catch(err => {
                 setLoggedIn(false);
@@ -78,10 +86,6 @@ export default function App() {
             .finally(handleInfoTooltip);
     }
 
-    function handleSearch(model) {
-        console.log(model);
-    }
-
     function handleSignOut() {
         localStorage.removeItem('token');
         setLoggedIn(false);
@@ -106,6 +110,39 @@ export default function App() {
 
     function closeAllPopups() {
         setIsInfoTooltipOpen(false);
+    }
+
+    function handleSearch({ search, switchBox }) {
+        setIsLoading(true);
+        moviesApi.getMovies()
+            .then((data) => {
+                const moviesList = filterMovies(data, search);
+                setInitialMovies(moviesList);
+            })
+            .catch(err => console.log(err))
+            .finally(() => setIsLoading(false));
+    }
+
+    function handleCardLike(card) {
+        mainApi.setCreateMovie(card)
+            .then((newMovie) => {
+                setSavedMovies([newMovie, ...savedMovies]);
+            })
+            .catch(err => {
+                setTooltipText(err);
+            })
+            .finally(handleInfoTooltip);
+    }
+
+    function handleCardDelete(card) {
+        mainApi.setDeleteMovie(card._id)
+            .then(() => {
+                setSavedMovies((state) => state.filter((item) => item._id !== card._id));
+            })
+            .catch(err => {
+                setTooltipText(err);
+            })
+            .finally(handleInfoTooltip);
     }
 
     return (
@@ -145,6 +182,10 @@ export default function App() {
                         handlerClickClose={toggleMenuMode}
                         isMenuOpen={isMenuOpen}
                         loggedIn={loggedIn}
+                        savedMovies={savedMovies}
+                        onCardDelete={handleCardDelete}
+                        handleLikeClick={handleCardLike}
+                        movies={initialMovies}
                     />
 
                     <ProtectedRoute
@@ -181,6 +222,7 @@ export default function App() {
                     text={tooltipText}
                 />
             </div>
+            {isLoading && <Preloader />}
         </CurrentUserContext.Provider>
     );
 }
