@@ -132,7 +132,11 @@ export default function App() {
                     handleInfoTooltip();
                 }
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                const text = '«Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз»';
+                setTooltipText(text);
+                handleInfoTooltip();
+            })
             .finally(() => setIsLoading(false));
     }
 
