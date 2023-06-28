@@ -4,8 +4,7 @@ class MainApi extends React.Component {
     constructor(props) {
         super(props);
 
-        //this._baseUrl = 'https://api.milchess.nomoredomainsclub.ru/';
-        this._baseUrl = 'http://localhost:3001/';
+        this._baseUrl = 'https://movies-explorer-milchess.nomoredomains.monster/api/';
         this._headers = {
             authorization: `Bearer ${localStorage.getItem('token')}`,
             'Content-Type': 'application/json'
