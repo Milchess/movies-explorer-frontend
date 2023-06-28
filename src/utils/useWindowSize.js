@@ -6,7 +6,6 @@ function useWindowSize() {
         height: undefined,
     });
     useEffect(() => {
-
         function handleResize() {
 
             setWindowSize({

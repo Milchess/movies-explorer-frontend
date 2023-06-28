@@ -22,7 +22,6 @@ import Preloader from '../Preloader/Preloader';
 export default function App() {
     const [loggedIn, setLoggedIn] = useState(false);
     const [isMenuOpen, toggleMenu] = useState(false);
-    const [isEditProfile, toggleEditProfile] = useState(true);
     const [currentUser, setCurrentUser] = useState('');
     const [isInfoTooltipOpen, setIsInfoTooltipOpen] = useState(false);
     const [tooltipText, setTooltipText] = useState('');
@@ -104,10 +103,6 @@ export default function App() {
         toggleMenu(!isMenuOpen);
     }
 
-    function toggleEditProfileMode() {
-        toggleEditProfile(!isEditProfile);
-    }
-
     function closeAllPopups() {
         setIsInfoTooltipOpen(false);
     }
@@ -133,6 +128,7 @@ export default function App() {
                 }
             })
             .catch(err => {
+                console.log(err);
                 const text = '«Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз»';
                 setTooltipText(text);
                 handleInfoTooltip();
@@ -226,8 +222,7 @@ export default function App() {
                         handlerClickClose={toggleMenuMode}
                         isMenuOpen={isMenuOpen}
                         loggedIn={loggedIn}
-                        onButtonClick={toggleEditProfileMode}
-                        isEditProfile={isEditProfile}
+                        init={true}
                         signOut={handleSignOut}
                         onToolTip={handleInfoTooltip}
                         toolTipText={handleTextTooltip}

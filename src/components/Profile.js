@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import '../index.css';
 import { Link } from 'react-router-dom';
 import useFormValidation from './FormValidator';
@@ -9,6 +9,11 @@ import { regexEMail, regexName } from '../constant';
 
 function Profile(props) {
     const { name, email } = useContext(CurrentUserContext);
+    const [isEditProfile, setEditProfile] = useState(props.init);
+
+    const toggleEditProfileMode = () => {
+        setEditProfile(!isEditProfile);
+    }
 
     const { values, handleChange, errors, isValid } = useFormValidation();
 
@@ -73,14 +78,14 @@ function Profile(props) {
                             className={`form__btn-result
                             form__btn-result_profile
                             hover-style
-                            ${props.isEditProfile && 'style-hidden'}
+                            ${isEditProfile && 'style-hidden'}
                             ${!isValid && 'btn-disabled'}`}
                             disabled={!isValid}
                     >Сохранить</button>
                 </form>
-                <div className={`user-profile__btn-box ${!props.isEditProfile && 'style-hidden'}`}>
+                <div className={`user-profile__btn-box ${!isEditProfile && 'style-hidden'}`}>
                     <button className="user-profile__edit hover-style" aria-label="Редактировать"
-                            type="button" onClick={props.onButtonClick}>Редактировать
+                            type="button" onClick={toggleEditProfileMode}>Редактировать
                     </button>
                     <Link to="/" className="user-profile__exit hover-style" aria-label="Выйти из аккаунта"
                           type="button" onClick={props.signOut}>Выйти из
