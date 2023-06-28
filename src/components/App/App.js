@@ -173,6 +173,30 @@ export default function App() {
         }
     }
 
+    const handleSearchSaveMovies = (search, switchBox) => {
+        if (savedMovies === null || savedMovies.length === 0) {
+            return;
+        }
+        
+        setIsLoading(true);
+        const moviesList = filterMovies(savedMovies, search);
+        let isEmptyList = moviesList.length === 0;
+
+        if (switchBox) {
+            const filterDurationList = filterDuration(moviesList);
+            isEmptyList = filterDurationList.length === 0;
+            setSavedMovies(filterDurationList);
+        } else {
+            setSavedMovies(moviesList);
+        }
+        setIsLoading(false);
+
+        if (isEmptyList) {
+            setTooltipText('Ничего не найдено');
+            handleInfoTooltip();
+        }
+    };
+
     function handleCardLike(card) {
         mainApi.setCreateMovie(card)
             .then((newMovie) => {
@@ -242,14 +266,13 @@ export default function App() {
                     <ProtectedRoute
                         path='/saved-movies'
                         component={SavedMovies}
-                        onSearch={handleSearch}
+                        onSearch={handleSearchSaveMovies}
                         handlerClickClose={toggleMenuMode}
                         isMenuOpen={isMenuOpen}
                         loggedIn={loggedIn}
                         savedMovies={savedMovies}
                         onCardDelete={handleCardDelete}
                         handleLikeClick={handleCardLike}
-                        movies={initialMovies}
                         isShort={isShort}
                     />
 

@@ -43,7 +43,7 @@ function SavedMovies(props) {
                 <MoviesCardList
                     isMySave={true}
                     count={visibleMovies}
-                    movies={props.movies}
+                    movies={props.savedMovies}
                     savedMovies={props.savedMovies}
                     onCardDelete={props.onCardDelete}
                     handleLikeClick={props.handleLikeClick}
