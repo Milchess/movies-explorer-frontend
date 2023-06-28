@@ -1,37 +1,58 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SearchForm from './SearchForm/SearchForm';
-import MoviesCard from './MoviesCard/MoviesCard';
 import BoxMore from './BoxMore/BoxMore';
 import MenuBurger from './MenuBurger/MenuBurger';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
+import MoviesCardList from './MoviesCardList/MoviesCardList';
+import useWindowSize from '../utils/useWindowSize';
 
 function SavedMovies(props) {
+    const [visibleMovies, setVisibleMovies] = useState(0);
+
+    const { width } = useWindowSize();
+
+    useEffect(() => {
+        if (width >= 1280) {
+            setVisibleMovies(visibleMovies + 12)
+        } else if (width >= 768) {
+            setVisibleMovies(visibleMovies + 8)
+        } else {
+            setVisibleMovies(visibleMovies + 5)
+        }
+    },[]);
+
+    const handleLoadMore = () => {
+        setVisibleMovies(visibleMovies + (width >= 1280 ? 3 : 2))
+    }
+
     return (
         <main>
             <MenuBurger
-                handlerClickClose={props.onButtonClick}
+                handlerClickClose={props.handlerClickClose}
                 isMenuOpen={props.isMenuOpen}
             />
             <Header
-                onButtonClick={props.onButtonClick}
+                onButtonClick={props.handlerClickClose}
                 loggedIn={props.loggedIn}
             />
             <SearchForm
                 onSearch={props.onSearch}
             />
-            <div className='line-box'></div>
-            <div className='elements'>
-                <ul className='grid-cards'>
-                    <MoviesCard
-                        isMySave={true}
-                        description={'33 слова о дизайне'}
-                        linkMovies={'https://www.kinopoisk.ru/film/1302273/'}
-                    />
-                </ul>
-            </div>
+            <section className='elements'>
+                <MoviesCardList
+                    isMySave={true}
+                    count={visibleMovies}
+                    movies={props.movies}
+                    savedMovies={props.savedMovies}
+                    onCardDelete={props.onCardDelete}
+                    handleLikeClick={props.handleLikeClick}
+                />
+            </section>
             <BoxMore
-                isSaveMovies={true}
+                isMySave={true}
+                onClick={handleLoadMore}
+                isVisible={props.movies.length > visibleMovies}
             />
             <Footer/>
         </main>

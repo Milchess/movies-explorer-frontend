@@ -15,7 +15,7 @@ import Header from '../Header/Header';
 import Tooltip from '../Tooltip/Tooltip';
 import MenuBurger from '../MenuBurger/MenuBurger';
 import moviesApi from '../../utils/MoviesApi';
-import { filterMovies } from '../../utils/utils';
+import { filterDuration, filterMovies } from '../../utils/utils';
 import Preloader from '../Preloader/Preloader';
 
 
@@ -112,12 +112,25 @@ export default function App() {
         setIsInfoTooltipOpen(false);
     }
 
-    function handleSearch({ search, switchBox }) {
+    function handleSearch({ search, switchBox = false }) {
         setIsLoading(true);
         moviesApi.getMovies()
             .then((data) => {
                 const moviesList = filterMovies(data, search);
-                setInitialMovies(moviesList);
+                let isEmptyList = moviesList.length === 0;
+
+                if (switchBox) {
+                    const filterDurationList = filterDuration(moviesList);
+                    isEmptyList = filterDurationList.length === 0;
+                    setInitialMovies(filterDurationList);
+                } else {
+                    setInitialMovies(moviesList);
+                }
+
+                if (isEmptyList) {
+                    setTooltipText('Ничего не найдено');
+                    handleInfoTooltip();
+                }
             })
             .catch(err => console.log(err))
             .finally(() => setIsLoading(false));
@@ -195,6 +208,10 @@ export default function App() {
                         handlerClickClose={toggleMenuMode}
                         isMenuOpen={isMenuOpen}
                         loggedIn={loggedIn}
+                        savedMovies={savedMovies}
+                        onCardDelete={handleCardDelete}
+                        handleLikeClick={handleCardLike}
+                        movies={initialMovies}
                     />
 
                     <ProtectedRoute
