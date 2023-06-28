@@ -52,7 +52,7 @@ function SavedMovies(props) {
             <BoxMore
                 isMySave={true}
                 onClick={handleLoadMore}
-                isVisible={props.movies.length > visibleMovies}
+                isVisible={false}
             />
             <Footer/>
         </main>

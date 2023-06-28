@@ -65,7 +65,20 @@ class MainApi extends React.Component {
         return this._patch('users/me', model);
     }
 
-    setCreateMovie(model) {
+    setCreateMovie(data) {
+        const model = {
+            country: data.country,
+            director: data.director,
+            duration: data.duration,
+            year: data.year,
+            nameRU: data.nameRU,
+            nameEN: data.nameEN,
+            description: data.description,
+            image: 'https://api.nomoreparties.co' + data.image.url,
+            thumbnail: 'https://api.nomoreparties.co' + data.image.formats.thumbnail.url,
+            movieId: data.id,
+            trailer: data.trailerLink
+        }
         return this._post('movies', model);
     }
 
@@ -87,17 +100,6 @@ class MainApi extends React.Component {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(model)
-        })
-            .then((res) => this._getResponseData(res))
-    }
-
-    getValidationToken() {
-        return fetch(`${this._baseUrl}users/me`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                "Authorization" : `Bearer ${localStorage.getItem('token')}`
-            },
         })
             .then((res) => this._getResponseData(res))
     }

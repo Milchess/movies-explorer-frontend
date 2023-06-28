@@ -173,11 +173,14 @@ export default function App() {
         }
     }
 
-    const handleSearchSaveMovies = (search, switchBox) => {
+    const handleSearchSaveMovies = ({
+                                        search = document.querySelector('.input-group__search').value,
+                                        switchBox = document.querySelector('.switch-box__form-checkbox').checked
+                                    }) => {
         if (savedMovies === null || savedMovies.length === 0) {
             return;
         }
-        
+
         setIsLoading(true);
         const moviesList = filterMovies(savedMovies, search);
         let isEmptyList = moviesList.length === 0;
@@ -204,19 +207,19 @@ export default function App() {
             })
             .catch(err => {
                 setTooltipText(err);
-            })
-            .finally(handleInfoTooltip);
+                handleInfoTooltip();
+            });
     }
 
-    function handleCardDelete(card) {
-        mainApi.setDeleteMovie(card._id)
+    function handleCardDelete(id) {
+        mainApi.setDeleteMovie(id)
             .then(() => {
-                setSavedMovies((state) => state.filter((item) => item._id !== card._id));
+                setSavedMovies((state) => state.filter((item) => item._id !== id));
             })
             .catch(err => {
                 setTooltipText(err);
-            })
-            .finally(handleInfoTooltip);
+                handleInfoTooltip();
+            });
     }
 
     return (

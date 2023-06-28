@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../index.css';
 import './MoviesCard.css';
 import { Link } from 'react-router-dom';
@@ -9,13 +9,18 @@ function MoviesCard({ isMySave, card, savedMovies, onCardDelete, handleLikeClick
 
     const time = MinToHours(card.duration);
 
+    useEffect(() => {
+        const first = savedMovies.find((saveMovie) => saveMovie.movieId === card.id);
+        setIsLike(!!first);
+    },[card]);
+
     function handleClick() {
         if (isMySave){
-            const [first] = savedMovies.filter((saveMovie) => saveMovie.movieId === card.id);
-            onCardDelete(first);
+            onCardDelete(card._id);
         } else {
             if (isLike) {
-                onCardDelete(card);
+                const [first] = savedMovies.filter((saveMovie) => saveMovie.movieId === card.id);
+                onCardDelete(first._id);
                 setIsLike(false);
             } else {
                 handleLikeClick(card);
@@ -31,7 +36,7 @@ function MoviesCard({ isMySave, card, savedMovies, onCardDelete, handleLikeClick
                       target="_blank">
                     <img alt={`Постер фильма: ${card.nameRU}`}
                          className="grid-card__image"
-                         src={`https://api.nomoreparties.co${card.image.url}`}/>
+                         src={isMySave ? card.image : `https://api.nomoreparties.co/${card.image.url}`}/>
                 </Link>
                 <div className="grid-card__item">
                     <h2 className="grid-card__title">{card.nameRU}</h2>
