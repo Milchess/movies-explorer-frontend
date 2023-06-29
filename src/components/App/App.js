@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
+import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
 import {CurrentUserContext} from '../../contexts/CurrentUserContext';
 import Footer from '../Footer/Footer';
 import Login from '../Login';
@@ -32,8 +32,13 @@ export default function App() {
     const [initialMovies, setInitialMovies] = useState([]);
 
     const history = useHistory();
+    const location = useLocation();
+    const path = location.pathname;
+
+    useEffect(validAuth, []);
 
     useEffect(() => {
+        if (loggedIn)
         Promise.all([mainApi.getUserInformation(), mainApi.getInitialMovies()])
             .then(([user, cards]) => {
                 setLoggedIn(true);
@@ -45,6 +50,19 @@ export default function App() {
                 console.log(err);
             });
     }, [loggedIn, history]);
+
+    function validAuth() {
+        if (localStorage.getItem('token')) {
+            mainApi.getValidationToken()
+                .then(() => {
+                    setLoggedIn(true);
+                    history.push(path);
+                })
+                .catch(err => {
+                    console.log(`Ошибка.....: ${err}`)
+                });
+        }
+    }
 
     function handleSignIn(model) {
         mainApi.getAuthorization(model)
@@ -112,10 +130,11 @@ export default function App() {
         setIsInfoTooltipOpen(false);
     }
 
-    function handleSearch({
-                              search = document.querySelector('.input-group__search').value,
-                              switchBox = document.querySelector('.switch-box__form-checkbox').checked
-    }) {
+    function handleSearch(e) {
+        const form = e.target.closest('form');
+        const search = form.querySelector('.input-group__search').value;
+        const switchBox = form.querySelector('.switch-box__form-checkbox').checked;
+
         localStorage.setItem('textSearch', search);
         localStorage.setItem('checkedSwitchSearch', `${switchBox ? 'on' : 'off'}`);
         setInitialMovies([]);
@@ -174,10 +193,11 @@ export default function App() {
         }
     }
 
-    const handleSearchSaveMovies = ({
-                                        search = document.querySelector('.input-group__search').value,
-                                        switchBox = document.querySelector('.switch-box__form-checkbox').checked
-                                    }) => {
+    const handleSearchSaveMovies = (e) => {
+        const form = e.target.closest('form');
+        const search = form.querySelector('.input-group__search').value;
+        const switchBox = form.querySelector('.switch-box__form-checkbox').checked;
+
         if (savedMovies === null || savedMovies.length === 0) {
             return;
         }
@@ -202,6 +222,21 @@ export default function App() {
             handleInfoTooltip();
         }
     };
+
+    function handlerSaveMoviesToggleCheckBox(e) {
+        const form = e.target.closest('form');
+        const search = form.querySelector('.input-group__search').value;
+        const switchBox = form.querySelector('.switch-box__form-checkbox').checked;
+
+        const moviesList = filterMovies(savedMovies, search);
+
+        if (switchBox) {
+            const filterDurationList = filterDuration(moviesList);
+            setSearchSavedMovies(filterDurationList);
+        } else {
+            setSearchSavedMovies(moviesList);
+        }
+    }
 
     function handleCardLike(card) {
         mainApi.setCreateMovie(card)
@@ -282,6 +317,7 @@ export default function App() {
                         path='/saved-movies'
                         component={SavedMovies}
                         onSearch={handleSearchSaveMovies}
+                        onToogleCheckbox={handlerSaveMoviesToggleCheckBox}
                         handlerClickClose={toggleMenuMode}
                         isMenuOpen={isMenuOpen}
                         loggedIn={loggedIn}
@@ -296,7 +332,6 @@ export default function App() {
                         path='/profile'
                         component={Profile}
                         onSubmit={handleUpdateProfile}
-                        onSearch={handleSearch}
                         handlerClickClose={toggleMenuMode}
                         isMenuOpen={isMenuOpen}
                         loggedIn={loggedIn}

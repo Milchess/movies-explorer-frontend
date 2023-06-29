@@ -6,13 +6,13 @@ import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 import useFormValidation from '../FormValidator';
 
 function SearchForm(props) {
-    const { values, handleChange, errors } = useFormValidation();
+    const { handleChange, errors } = useFormValidation();
     const [isDisable, setDisable] = useState(true);
 
     function handleSubmit(e) {
         e.preventDefault();
 
-        props.onSearch(values);
+        props.onSearch(e);
     }
 
     const handleInputValue = (e) => {
@@ -43,7 +43,7 @@ function SearchForm(props) {
                 </div>
                 <span className='form__error'>{errors.search}</span>
                 <FilterCheckbox
-                    handleChange={handleInputValue}
+                    handleChange={props.handlerToggleCheckbox}
                 />
             </form>
         </section>

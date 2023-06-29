@@ -45,6 +45,10 @@ function Movies(props) {
     });
 
     useEffect(() => {
+        filteringMovies();
+    }, [props.movies]);
+
+    function filteringMovies() {
         if (localStorage.getItem('allMovies')) {
             const movies = JSON.parse(localStorage.getItem('allMovies'));
 
@@ -63,7 +67,16 @@ function Movies(props) {
         } else {
             setFilteredMovies(props.movies);
         }
-    }, [props.movies]);
+    }
+
+    function handlerToggleCheckbox(e) {
+        const form = e.target.closest('form');
+        const checkBox = form.querySelector('.switch-box__form-checkbox');
+
+        localStorage.setItem('checkedSwitchSearch', `${checkBox.checked ? 'on' : 'off'}`);
+
+        filteringMovies();
+    }
 
     const handleLoadMore = () => {
         setVisibleMovies(visibleMovies + (width >= SIZE_DESKTOP ? SHOW_MORE_DESKTOP : SHOW_MORE_NO_DESKTOP));
@@ -81,6 +94,7 @@ function Movies(props) {
             />
             <SearchForm
                 onSearch={props.onSearch}
+                handlerToggleCheckbox={handlerToggleCheckbox}
             />
             <section className='elements'>
                 <MoviesCardList

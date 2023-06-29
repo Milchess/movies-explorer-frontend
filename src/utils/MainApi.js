@@ -102,6 +102,17 @@ class MainApi extends React.Component {
         })
             .then((res) => this._getResponseData(res))
     }
+
+    getValidationToken() {
+        return fetch(`${this._baseUrl}users/me`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                "Authorization" : `Bearer ${localStorage.getItem('token')}`
+            },
+        })
+            .then((res) => this._getResponseData(res))
+    }
 }
 
 const mainApi = new MainApi();

@@ -25,6 +25,7 @@ function SavedMovies(props) {
             />
             <SearchForm
                 onSearch={props.onSearch}
+                handlerToggleCheckbox={props.onToogleCheckbox}
             />
             <section className='elements'>
                 <MoviesCardList
