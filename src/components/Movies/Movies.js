@@ -9,23 +9,40 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import BoxMore from '../BoxMore/BoxMore';
 import useWindowSize from '../../utils/useWindowSize';
 import { filterDuration, filterMovies } from '../../utils/utils';
+import {
+    SHOW_MORE_DESKTOP,
+    SHOW_MORE_NO_DESKTOP,
+    SHOW_MOVIE_DESKTOP,
+    SHOW_MOVIE_MOBILE,
+    SHOW_MOVIE_TABLET, SIZE_DESKTOP, SIZE_MOBILE, SIZE_TABLET
+} from '../../constant';
 
 
 function Movies(props) {
     const [visibleMovies, setVisibleMovies] = useState(0);
-    const [filteredMovies, setFilteredMovies] = useState([]);
+    const [filteredMovies, setFilteredMovies] = useState(props.movies);
 
     const { width } = useWindowSize();
 
-    useEffect(() => {
-        if (width >= 1280) {
-            setVisibleMovies(visibleMovies + 12)
-        } else if (width >= 768) {
-            setVisibleMovies(visibleMovies + 8)
-        } else {
-            setVisibleMovies(visibleMovies + 5)
+    function shownCount() {
+        if (width >= SIZE_DESKTOP) {
+            setVisibleMovies(SHOW_MOVIE_DESKTOP);
+        } else if (width >= SIZE_TABLET) {
+            setVisibleMovies(SHOW_MOVIE_TABLET);
+        } else if (width >= SIZE_MOBILE) {
+            setVisibleMovies(SHOW_MOVIE_MOBILE);
         }
-    },[]);
+    }
+
+    useEffect(() => {
+        shownCount();
+    },[width]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            window.addEventListener('resize', shownCount)
+        }, 500);
+    });
 
     useEffect(() => {
         if (localStorage.getItem('allMovies')) {
@@ -49,7 +66,7 @@ function Movies(props) {
     }, [props.movies]);
 
     const handleLoadMore = () => {
-        setVisibleMovies(visibleMovies + (width >= 1280 ? 3 : 2));
+        setVisibleMovies(visibleMovies + (width >= SIZE_DESKTOP ? SHOW_MORE_DESKTOP : SHOW_MORE_NO_DESKTOP));
     }
 
     return (
@@ -78,7 +95,7 @@ function Movies(props) {
             <BoxMore
                 isMySave={false}
                 onClick={handleLoadMore}
-                isVisible={props.movies.length > visibleMovies}
+                isVisible={filteredMovies.length > visibleMovies}
             />
             <Footer/>
         </main>

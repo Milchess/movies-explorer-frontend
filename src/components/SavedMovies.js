@@ -5,26 +5,13 @@ import MenuBurger from './MenuBurger/MenuBurger';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import MoviesCardList from './MoviesCardList/MoviesCardList';
-import useWindowSize from '../utils/useWindowSize';
 
 function SavedMovies(props) {
-    const [visibleMovies, setVisibleMovies] = useState(0);
-
-    const { width } = useWindowSize();
+    const [filteredMovies, setFilteredMovies] = useState(props.savedMovies);
 
     useEffect(() => {
-        if (width >= 1280) {
-            setVisibleMovies(visibleMovies + 12)
-        } else if (width >= 768) {
-            setVisibleMovies(visibleMovies + 8)
-        } else {
-            setVisibleMovies(visibleMovies + 5)
-        }
-    },[]);
-
-    const handleLoadMore = () => {
-        setVisibleMovies(visibleMovies + (width >= 1280 ? 3 : 2))
-    }
+        setFilteredMovies(props.movies);
+    }, [props.movies]);
 
     return (
         <main>
@@ -42,16 +29,16 @@ function SavedMovies(props) {
             <section className='elements'>
                 <MoviesCardList
                     isMySave={true}
-                    count={visibleMovies}
+                    count={props.savedMovies.length}
                     movies={props.savedMovies}
-                    savedMovies={props.savedMovies}
+                    savedMovies={filteredMovies}
                     onCardDelete={props.onCardDelete}
                     handleLikeClick={props.handleLikeClick}
                 />
             </section>
             <BoxMore
                 isMySave={true}
-                onClick={handleLoadMore}
+                onClick={null}
                 isVisible={false}
             />
             <Footer/>

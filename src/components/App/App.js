@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import {CurrentUserContext} from '../../contexts/CurrentUserContext';
 import Footer from '../Footer/Footer';
 import Login from '../Login';
@@ -26,6 +26,7 @@ export default function App() {
     const [isInfoTooltipOpen, setIsInfoTooltipOpen] = useState(false);
     const [tooltipText, setTooltipText] = useState('');
     const [savedMovies, setSavedMovies] = useState([]);
+    const [searchSavedMovies, setSearchSavedMovies] = useState(savedMovies);
     const [isLoading, setIsLoading] = useState(false);
     const [isShort, setIsShort] = useState(false);
     const [initialMovies, setInitialMovies] = useState([]);
@@ -38,9 +39,9 @@ export default function App() {
                 setLoggedIn(true);
                 setCurrentUser(user);
                 setSavedMovies(cards.reverse());
+                setSearchSavedMovies(cards.reverse());
             })
             .catch(err => {
-                setLoggedIn(false);
                 console.log(err);
             });
     }, [loggedIn, history]);
@@ -82,8 +83,8 @@ export default function App() {
             })
             .catch(err => {
                 setTooltipText(err);
-            })
-            .finally(handleInfoTooltip);
+                handleInfoTooltip();
+            });
     }
 
     function handleSignOut() {
@@ -181,6 +182,8 @@ export default function App() {
             return;
         }
 
+        setSearchSavedMovies([]);
+
         setIsLoading(true);
         const moviesList = filterMovies(savedMovies, search);
         let isEmptyList = moviesList.length === 0;
@@ -188,9 +191,9 @@ export default function App() {
         if (switchBox) {
             const filterDurationList = filterDuration(moviesList);
             isEmptyList = filterDurationList.length === 0;
-            setSavedMovies(filterDurationList);
+            setSearchSavedMovies(filterDurationList);
         } else {
-            setSavedMovies(moviesList);
+            setSearchSavedMovies(moviesList);
         }
         setIsLoading(false);
 
@@ -226,14 +229,23 @@ export default function App() {
         <CurrentUserContext.Provider value={currentUser}>
             <div className='page'>
                 <Switch>
+
                     <Route path='/signin'>
-                        <Login
-                            onAuth={handleSignIn}/>
+                        {loggedIn ? (
+                            <Redirect to="/movies" />
+                        ) : (
+                            <Login
+                                onAuth={handleSignIn}/>
+                        )}
                     </Route>
 
                     <Route path='/signup'>
-                        <Register
-                            onRegistry={handleSignUp}/>
+                        {loggedIn ? (
+                            <Redirect to="/movies" />
+                        ) : (
+                            <Register
+                                onRegistry={handleSignUp}/>
+                        )}
                     </Route>
 
                     <Route exact path='/'>
@@ -273,7 +285,8 @@ export default function App() {
                         handlerClickClose={toggleMenuMode}
                         isMenuOpen={isMenuOpen}
                         loggedIn={loggedIn}
-                        savedMovies={savedMovies}
+                        savedMovies={searchSavedMovies}
+                        movies={savedMovies}
                         onCardDelete={handleCardDelete}
                         handleLikeClick={handleCardLike}
                         isShort={isShort}

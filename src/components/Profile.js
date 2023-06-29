@@ -5,7 +5,7 @@ import useFormValidation from './FormValidator';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import MenuBurger from './MenuBurger/MenuBurger';
 import Header from './Header/Header';
-import { regexEMail, regexName } from '../constant';
+import { REGEX_EMAIL, REGEX_NAME } from '../constant';
 
 function Profile(props) {
     const { name, email } = useContext(CurrentUserContext);
@@ -64,7 +64,7 @@ function Profile(props) {
                             name='name'
                             required
                             placeholder='Введите ваше имя'
-                            pattern={regexName}
+                            pattern={REGEX_NAME}
                             minLength='2'
                             maxLength='30'
                             disabled={isEditProfile}
@@ -81,7 +81,7 @@ function Profile(props) {
                             placeholder='Введите вашу электронную почту'
                             minLength='2'
                             maxLength='30'
-                            pattern={regexEMail}
+                            pattern={REGEX_EMAIL}
                             disabled={isEditProfile}
                             onChange={handleInputValue}
                             defaultValue={values?.email || email}/>
