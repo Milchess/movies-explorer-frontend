@@ -4,3 +4,5 @@
 Макет проекта: https://disk.yandex.ru/d/MXkiZ60LKnXUFg
 
 Ссылка на пул-реквест https://github.com/Milchess/movies-explorer-frontend/pull/6
+
+Ссылка на опубликованный проект: https://movies-explorer-milchess.nomoredomains.monster/
