@@ -10,17 +10,30 @@ import { regexEMail, regexName } from '../constant';
 function Profile(props) {
     const { name, email } = useContext(CurrentUserContext);
     const [isEditProfile, setEditProfile] = useState(props.init);
+    const [isDisable, setDisable] = useState(true);
+
+    const { values, handleChange, errors } = useFormValidation();
 
     const toggleEditProfileMode = () => {
         setEditProfile(!isEditProfile);
     }
 
-    const { values, handleChange, errors, isValid } = useFormValidation();
+    const handleInputValue = (e) => {
+        handleChange(e);
+
+        const form = e.target.closest('form');
+        const [nameProfile, emailProfile] = form.querySelectorAll('.form__input');
+
+        if ((nameProfile.value !== name || emailProfile.value !== email) && form.checkValidity())
+            setDisable(false);
+        else
+            setDisable(true);
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
 
-        if (values.name !== name && values.email !== email) {
+        if (values.name !== name || values.email !== email) {
             props.onSubmit({
                 name: values.name ?? name,
                 email: values.email ?? email,
@@ -54,8 +67,8 @@ function Profile(props) {
                             pattern={regexName}
                             minLength='2'
                             maxLength='30'
-                            disabled={props.isEditProfile}
-                            onChange={handleChange}
+                            disabled={isEditProfile}
+                            onChange={handleInputValue}
                             defaultValue={values?.name || name}/>
                     </label>
                     <span className="form__error name-error">{errors.name}</span>
@@ -69,18 +82,18 @@ function Profile(props) {
                             minLength='2'
                             maxLength='30'
                             pattern={regexEMail}
-                            disabled={props.isEditProfile}
-                            onChange={handleChange}
+                            disabled={isEditProfile}
+                            onChange={handleInputValue}
                             defaultValue={values?.email || email}/>
                     </label>
                     <span className="form__error">{errors.email}</span>
                     <button type="submit"
                             className={`form__btn-result
                             form__btn-result_profile
-                            hover-style
                             ${isEditProfile && 'style-hidden'}
-                            ${!isValid && 'btn-disabled'}`}
-                            disabled={!isValid}
+                            ${!isDisable && 'hover-style'}
+                            ${isDisable && 'btn-disabled'}`}
+                            disabled={isDisable}
                     >Сохранить</button>
                 </form>
                 <div className={`user-profile__btn-box ${!isEditProfile && 'style-hidden'}`}>
