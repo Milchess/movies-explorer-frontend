@@ -110,6 +110,7 @@ export default function App() {
         localStorage.removeItem('allMovies');
         localStorage.removeItem('textSearch');
         localStorage.removeItem('checkedSwitchSearch');
+        localStorage.removeItem('textSaveSearch');
         setLoggedIn(false);
         history.go('/');
     }
@@ -196,6 +197,7 @@ export default function App() {
     const handleSearchSaveMovies = (e) => {
         const form = e.target.closest('form');
         const search = form.querySelector('.input-group__search').value;
+        localStorage.setItem('textSaveSearch', search);
         const switchBox = form.querySelector('.switch-box__form-checkbox').checked;
 
         if (savedMovies === null || savedMovies.length === 0) {
@@ -225,7 +227,8 @@ export default function App() {
 
     function handlerSaveMoviesToggleCheckBox(e) {
         const form = e.target.closest('form');
-        const search = form.querySelector('.input-group__search').value;
+        const search = localStorage.getItem('textSaveSearch') ?? '';
+
         const switchBox = form.querySelector('.switch-box__form-checkbox').checked;
 
         const moviesList = filterMovies(savedMovies, search);
@@ -236,6 +239,10 @@ export default function App() {
         } else {
             setSearchSavedMovies(moviesList);
         }
+    }
+
+    function handlerInitialSavedMovies() {
+        setSearchSavedMovies(savedMovies);
     }
 
     function handleCardLike(card) {
@@ -326,6 +333,7 @@ export default function App() {
                         onCardDelete={handleCardDelete}
                         handleLikeClick={handleCardLike}
                         isShort={isShort}
+                        init={handlerInitialSavedMovies}
                     />
 
                     <ProtectedRoute

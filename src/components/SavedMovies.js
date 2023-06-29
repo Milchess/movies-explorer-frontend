@@ -5,13 +5,17 @@ import MenuBurger from './MenuBurger/MenuBurger';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import MoviesCardList from './MoviesCardList/MoviesCardList';
+import { useHistory } from 'react-router-dom';
 
 function SavedMovies(props) {
-    const [filteredMovies, setFilteredMovies] = useState(props.savedMovies);
+    const [filteredMovies, setFilteredMovies] = useState([]);
+    const history = useHistory();
 
     useEffect(() => {
+        props.init();
         setFilteredMovies(props.movies);
-    }, [props.movies]);
+        localStorage.removeItem('textSaveSearch');
+    }, [history]);
 
     return (
         <main>
