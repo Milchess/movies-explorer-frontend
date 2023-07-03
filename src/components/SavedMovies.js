@@ -1,25 +1,52 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SearchForm from './SearchForm/SearchForm';
-import MoviesCard from './MoviesCard/MoviesCard';
 import BoxMore from './BoxMore/BoxMore';
+import MenuBurger from './MenuBurger/MenuBurger';
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
+import MoviesCardList from './MoviesCardList/MoviesCardList';
+import { useHistory } from 'react-router-dom';
 
-function SavedMovies() {
+function SavedMovies(props) {
+    const [filteredMovies, setFilteredMovies] = useState([]);
+    const history = useHistory();
+
+    useEffect(() => {
+        props.init();
+        setFilteredMovies(props.movies);
+        localStorage.removeItem('textSaveSearch');
+    }, [history]);
+
     return (
         <main>
-            <SearchForm/>
-            <div className='line-box'></div>
-            <div className='elements'>
-                <ul className='grid-cards'>
-                    <MoviesCard
-                        isMySave={true}
-                        description={'33 слова о дизайне'}
-                        linkMovies={'https://www.kinopoisk.ru/film/1302273/'}
-                    />
-                </ul>
-            </div>
-            <BoxMore
-                isSaveMovies={true}
+            <MenuBurger
+                handlerClickClose={props.handlerClickClose}
+                isMenuOpen={props.isMenuOpen}
             />
+            <Header
+                onButtonClick={props.handlerClickClose}
+                loggedIn={props.loggedIn}
+            />
+            <SearchForm
+                onSearch={props.onSearch}
+                handlerToggleCheckbox={props.onToogleCheckbox}
+            />
+            <section className='elements'>
+                <MoviesCardList
+                    isMySave={true}
+                    count={props.savedMovies.length}
+                    movies={props.savedMovies}
+                    savedMovies={filteredMovies}
+                    onCardDelete={props.onCardDelete}
+                    handleLikeClick={props.handleLikeClick}
+                />
+            </section>
+            <BoxMore
+                isMySave={true}
+                onClick={null}
+                isVisible={false}
+            />
+            <Footer/>
         </main>
     );
 }

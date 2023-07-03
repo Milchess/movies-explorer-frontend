@@ -4,8 +4,13 @@ import './BoxMore.css';
 
 function BoxMore(props) {
     return (
-        <section className={`box-more ${props.isSaveMovies && 'box-more_saved'}`}>
-            <button className={`box-more__btn hover-style ${props.isSaveMovies && 'style-hidden'}`} type='button' aria-label='Ещё'>Ещё</button>
+        <section className='box-more'>
+            {props.isVisible && <button
+                className={`box-more__btn hover-style ${props.isMySave && 'style-hidden'}`}
+                type='button'
+                aria-label='Ещё'
+                onClick={props.onClick}
+            >Ещё</button>}
         </section>
     )
 }

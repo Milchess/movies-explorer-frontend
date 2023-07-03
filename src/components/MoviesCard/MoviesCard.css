@@ -98,6 +98,12 @@
     cursor: pointer;
 }
 
+.grid-card__like_active {
+    background-image: url('../../images/iconLikeActive.svg');
+    background-color: transparent;
+    transition: background 0.3s ease;
+}
+
 .grid-card__delete {
     background-image: url('../../images/iconDelete.svg');
     background-repeat: no-repeat;
